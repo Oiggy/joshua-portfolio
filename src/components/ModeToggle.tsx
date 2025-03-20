@@ -55,8 +55,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
       return 'text-black';
     }
     
-    // When a specific mode is active, only that button should have its unique color
-    if (activeMode === mode) {
+    // If a button is active, it should have its unique color
+    if (mode === activeMode) {
       switch (mode) {
         case 'experience': return 'text-[#1EAEDB]';
         case 'skills': return 'text-green-500';
@@ -66,7 +66,7 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
       }
     }
     
-    // All inactive buttons remain black
+    // Inactive buttons remain black
     return 'text-black';
   };
 
