@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, X } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
 import { 
   Dialog,
