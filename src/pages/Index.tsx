@@ -3,10 +3,15 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import Projects from '@/components/Projects';
+import About from '@/components/About';
+import Skills from '@/components/Skills';
+import Contact from '@/components/Contact';
+import Experience from '@/components/Experience';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
+import ModeToggle from '@/components/ModeToggle';
 
 const Index = () => {
   useEffect(() => {
@@ -43,8 +48,13 @@ const Index = () => {
       <Header />
       
       <main>
+        <ModeToggle />
         <Hero />
         <Projects />
+        <Experience />
+        <Skills />
+        <About />
+        <Contact />
       </main>
       
       <Footer />
