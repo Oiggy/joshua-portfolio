@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { ArrowRight, Brain, Plane, Cpu } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
 
 const Projects = () => {
@@ -9,7 +9,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      icon: <Cpu className="h-8 w-8" />,
+      logo: "/lovable-uploads/e0e10bdd-0b43-40d1-ad51-7f573122fd7f.png",
       title: "Grana: AI-Powered Smart Grain Cooking Feature",
       company: "CO.LAB",
       year: "January 2025 – Present",
@@ -26,7 +26,7 @@ To maintain long-term strategic alignment, an AI-driven feature roadmap was crea
     },
     {
       id: 2,
-      icon: <Plane className="h-8 w-8" />,
+      logo: "/lovable-uploads/bd633723-365f-4887-b16d-f91b8ed80643.png",
       title: "CAE TSPB737MAX FTD Desktop Application",
       company: "CAE",
       year: "December 2023 – April 2024",
@@ -45,7 +45,7 @@ Structured usability testing was conducted with flight trainees, leveraging data
     },
     {
       id: 3,
-      icon: <Brain className="h-8 w-8" />,
+      logo: "/lovable-uploads/b174aa3d-f23a-4004-a564-40e3a2a3e08c.png",
       title: "Neurocognitive Monitoring Module",
       company: "HEALTH & TECHNOLOGY DISTRICT",
       year: "March 2021 – December 2023",
@@ -88,7 +88,13 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 space-y-6">
-                <div className="text-primary">{project.icon}</div>
+                <div className="h-12 w-12">
+                  <img 
+                    src={project.logo} 
+                    alt={`${project.company} logo`} 
+                    className="h-full w-full object-contain"
+                  />
+                </div>
                 <h3 className="text-2xl font-semibold">{project.title}</h3>
                 <div className="text-sm text-muted-foreground uppercase tracking-wider">
                   {project.company} • {project.year}
