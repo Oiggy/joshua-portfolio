@@ -90,7 +90,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         });
       } else if (projectId === 2) {
         // Toggle the dialog for CAE project
-        setDialogOpen(true);
+        setDialogOpen(!dialogOpen);
       } else if (projectId === 3) {
         // For Health & Technology District, dialog popup is handled by the Dialog component
       }
@@ -161,10 +161,13 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                         Read More
                         <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                       </DialogTrigger>
-                      <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
+                      <DialogContent 
+                        className="sm:max-w-lg max-h-[80vh] overflow-y-auto"
+                        onClick={(e) => e.stopPropagation()} // Stop clicks from reaching the card
+                      >
                         <DialogClose 
                           className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100 focus:outline-none"
-                          onClick={() => setDialogOpen(false)}
+                          onClick={() => setDialogOpen(false)} // Explicitly set dialogOpen to false
                         >
                           <X className="h-4 w-4" />
                           <span className="sr-only">Close</span>
@@ -201,7 +204,10 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                       Read More
                       <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
+                    <DialogContent 
+                      className="sm:max-w-lg max-h-[80vh] overflow-y-auto"
+                      onClick={(e) => e.stopPropagation()} // Stop clicks from reaching the card
+                    >
                       <div className="flex flex-col items-center justify-center p-6">
                         <img 
                           src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
