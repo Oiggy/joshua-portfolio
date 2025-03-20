@@ -4,10 +4,10 @@ import Header from '@/components/Header';
 import HeroAbout from '@/components/HeroAbout';
 import About from '@/components/About';
 import Footer from '@/components/Footer';
-import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
+import PageTransition from '@/components/PageTransition';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -36,21 +36,22 @@ const AboutPage = () => {
   }, []);
   
   return (
-    <div className="relative">
-      <Loader />
-      <CustomCursor />
-      <SmoothScroll />
-      
-      <Header />
-      
-      <main>
-        <ModeToggle />
-        <HeroAbout />
-        <About />
-      </main>
-      
-      <Footer />
-    </div>
+    <PageTransition>
+      <div className="relative">
+        <CustomCursor />
+        <SmoothScroll />
+        
+        <Header />
+        
+        <main>
+          <ModeToggle />
+          <HeroAbout />
+          <About />
+        </main>
+        
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 

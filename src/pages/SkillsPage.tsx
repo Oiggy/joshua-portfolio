@@ -4,10 +4,10 @@ import Header from '@/components/Header';
 import HeroSkills from '@/components/HeroSkills';
 import Skills from '@/components/Skills';
 import Footer from '@/components/Footer';
-import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
+import PageTransition from '@/components/PageTransition';
 
 const SkillsPage = () => {
   useEffect(() => {
@@ -36,21 +36,22 @@ const SkillsPage = () => {
   }, []);
   
   return (
-    <div className="relative">
-      <Loader />
-      <CustomCursor />
-      <SmoothScroll />
-      
-      <Header />
-      
-      <main>
-        <ModeToggle />
-        <HeroSkills />
-        <Skills />
-      </main>
-      
-      <Footer />
-    </div>
+    <PageTransition>
+      <div className="relative">
+        <CustomCursor />
+        <SmoothScroll />
+        
+        <Header />
+        
+        <main>
+          <ModeToggle />
+          <HeroSkills />
+          <Skills />
+        </main>
+        
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 
