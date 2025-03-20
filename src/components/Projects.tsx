@@ -16,6 +16,7 @@ const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isPressed, setIsPressed] = useState<number | null>(null);
   const [dialogOpen, setDialogOpen] = useState<boolean>(false);
+  const [districtDialogOpen, setDistrictDialogOpen] = useState<boolean>(false);
 
   const projects = [
     {
@@ -92,7 +93,8 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         // Toggle the dialog for CAE project
         setDialogOpen(!dialogOpen);
       } else if (projectId === 3) {
-        // For Health & Technology District, dialog popup is handled by the Dialog component
+        // Toggle the dialog for Health & Technology District project
+        setDistrictDialogOpen(!districtDialogOpen);
       }
     }, 150);
   };
@@ -119,8 +121,8 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''} ${project.id === 2 ? 'cursor-pointer' : ''}`}
-            onClick={project.id === 2 ? () => handleCardClick(project.id) : undefined}
+            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''} ${project.id === 2 || project.id === 3 ? 'cursor-pointer' : ''}`}
+            onClick={(project.id === 2 || project.id === 3) ? () => handleCardClick(project.id) : undefined}
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 space-y-6">
@@ -197,28 +199,51 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                     </Dialog>
                   </>
                 ) : (
-                  <Dialog>
-                    <DialogTrigger 
-                      className="inline-flex items-center text-sm font-medium group cursor-pointer"
-                    >
-                      Read More
-                      <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                    </DialogTrigger>
-                    <DialogContent 
-                      className="sm:max-w-lg max-h-[80vh] overflow-y-auto"
-                      onClick={(e) => e.stopPropagation()} // Stop clicks from reaching the card
-                    >
-                      <div className="flex flex-col items-center justify-center p-6">
-                        <img 
-                          src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
-                          alt="Classified Information" 
-                          className="max-w-full h-auto mb-4"
-                        />
-                        <h3 className="text-xl font-bold mb-2">CLASSIFIED</h3>
-                        <p className="text-muted-foreground text-center">This information is confidential and not available for public viewing.</p>
-                      </div>
-                    </DialogContent>
-                  </Dialog>
+                  <>
+                    <Dialog open={districtDialogOpen} onOpenChange={setDistrictDialogOpen}>
+                      <DialogTrigger 
+                        className="inline-flex items-center text-sm font-medium group cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setDistrictDialogOpen(true);
+                        }}
+                      >
+                        Read More
+                        <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                      </DialogTrigger>
+                      <DialogContent 
+                        className="sm:max-w-lg max-h-[80vh] overflow-y-auto"
+                        onClick={(e) => e.stopPropagation()} // Stop clicks from reaching the card
+                      >
+                        <DialogClose 
+                          className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100 focus:outline-none"
+                          onClick={() => setDistrictDialogOpen(false)} // Explicitly set districtDialogOpen to false
+                        >
+                          <X className="h-4 w-4" />
+                          <span className="sr-only">Close</span>
+                        </DialogClose>
+                        <div className="flex flex-col items-center justify-start p-6">
+                          <img 
+                            src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                            alt="Classified Information" 
+                            className="max-w-full h-auto mb-6"
+                          />
+                          <DialogTitle className="text-xl font-bold mb-4 text-center">Neurocognitive Monitoring Module</DialogTitle>
+                          <DialogDescription className="text-muted-foreground mb-4">
+                            <div className="space-y-4">
+                              <p>The module was built to optimize neuro-assessment workflows, providing automated cognitive data visualization and decision-support automation. Through iterative UX improvements, report usability for healthcare providers increased by 40%, allowing for more intuitive clinical interpretations.</p>
+                              
+                              <p>The integration of real-time cognitive processing analytics helped improve diagnostic clarity by 35%, reducing clinician review times by 15 minutes. A newly implemented AI-enhanced reporting system further optimized structured data visualization, increasing report readability by 50% while cutting training time by 8 minutes.</p>
+                              
+                              <p>To expand accessibility, the module underwent localization efforts for international deployment, integrating automated translation frameworks. These enhancements improved usability for non-English-speaking clinicians by 45% and cut translation turnaround time by 20 minutes per report.</p>
+                              
+                              <p>A cloud-driven analytics framework was developed to enhance real-time data accuracy, improving system responsiveness by 30% and reducing processing latency by 10 seconds. The module was iteratively refined using agile-driven product development, leveraging Trello, SharePoint, and Miro for streamlined backlog prioritization and sprint execution, reducing feature rollout delays by 25%.</p>
+                            </div>
+                          </DialogDescription>
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                  </>
                 )}
               </div>
               <div className="md:w-1/2">
