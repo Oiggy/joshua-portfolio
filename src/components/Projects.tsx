@@ -112,7 +112,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md cursor-pointer ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''}`}
+            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''}`}
             onClick={() => project.id === 1 ? handleCardClick(project.id) : null}
           >
             <div className="flex flex-col md:flex-row gap-8">
@@ -132,7 +132,11 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                 
                 {project.id === 1 ? (
                   <button 
-                    className="inline-flex items-center text-sm font-medium group"
+                    className="inline-flex items-center text-sm font-medium group cursor-pointer"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      handleCardClick(project.id);
+                    }}
                   >
                     View Case Study
                     <ExternalLink size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
@@ -140,8 +144,11 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                 ) : (
                   <Dialog>
                     <DialogTrigger 
-                      className="inline-flex items-center text-sm font-medium group"
-                      onClick={() => handleCardClick(project.id)}
+                      className="inline-flex items-center text-sm font-medium group cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleCardClick(project.id);
+                      }}
                     >
                       View Classified
                       <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
@@ -178,3 +185,4 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
 };
 
 export default Projects;
+
