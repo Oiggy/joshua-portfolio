@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 import { Phone, Mail, MapPin, Copy, Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -79,7 +78,6 @@ const Contact = () => {
   
   return (
     <section 
-      id="contact" 
       ref={sectionRef}
       className="py-24 px-6 md:px-12 bg-secondary/50 section-appear"
     >

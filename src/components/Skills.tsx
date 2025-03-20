@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 
 const skillCategories = [
@@ -229,7 +228,6 @@ const Skills = () => {
   
   return (
     <section 
-      id="skills" 
       ref={sectionRef}
       className="py-24 px-6 md:px-12 section-appear"
     >

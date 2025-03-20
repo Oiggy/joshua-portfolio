@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 
 const experiences = [
@@ -136,7 +135,6 @@ const Experience = () => {
   
   return (
     <section 
-      id="experience" 
       ref={sectionRef}
       className="py-24 px-6 md:px-12 bg-secondary/50 section-appear"
     >

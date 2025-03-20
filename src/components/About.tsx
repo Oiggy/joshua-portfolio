@@ -28,7 +28,6 @@ const About = () => {
   
   return (
     <section 
-      id="about" 
       ref={sectionRef}
       className="py-24 px-6 md:px-12 section-appear"
     >

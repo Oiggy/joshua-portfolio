@@ -1,5 +1,6 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +11,25 @@ interface ModeToggleProps {
 }
 
 const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
+  const navigate = useNavigate();
+  const location = useLocation();
   const [activeMode, setActiveMode] = useState<Mode>('work-play');
+  
+  // Set active mode based on current path
+  useEffect(() => {
+    const path = location.pathname;
+    if (path === '/') {
+      setActiveMode('work-play');
+    } else if (path === '/experience') {
+      setActiveMode('experience');
+    } else if (path === '/skills') {
+      setActiveMode('skills');
+    } else if (path === '/contact') {
+      setActiveMode('contact');
+    } else if (path === '/about') {
+      setActiveMode('about');
+    }
+  }, [location.pathname]);
 
   const handleModeChange = (value: string) => {
     if (value) {
@@ -20,15 +39,11 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
         onModeChange(mode);
       }
       
-      // Scroll to the relevant section if it exists
-      if (mode !== 'work-play') {
-        const element = document.getElementById(mode);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-        }
+      // Navigate to the appropriate page
+      if (mode === 'work-play') {
+        navigate('/');
       } else {
-        // Scroll to top for work-play
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        navigate(`/${mode}`);
       }
     }
   };

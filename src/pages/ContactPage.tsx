@@ -1,15 +1,15 @@
 
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
-import Hero from '@/components/Hero';
-import Projects from '@/components/Projects';
+import HeroContact from '@/components/HeroContact';
+import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
 
-const Index = () => {
+const ContactPage = () => {
   useEffect(() => {
     // Add intersection observer for animations
     const sectionObserver = new IntersectionObserver(
@@ -45,8 +45,8 @@ const Index = () => {
       
       <main>
         <ModeToggle />
-        <Hero />
-        <Projects />
+        <HeroContact />
+        <Contact />
       </main>
       
       <Footer />
@@ -54,4 +54,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default ContactPage;
