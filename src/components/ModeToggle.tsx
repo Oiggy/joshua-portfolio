@@ -56,7 +56,9 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             value="work-play" 
             className={cn(
               "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              activeMode === 'work-play' ? "bg-white text-black shadow-sm" : "text-black hover:bg-secondary/80"
+              activeMode === 'work-play' 
+                ? "bg-white text-black shadow-sm" 
+                : "text-black hover:bg-secondary/80"
             )}
           >
             Work & Play
@@ -65,9 +67,10 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="experience" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              activeMode === 'experience' ? "bg-white shadow-sm" : "",
-              "text-[#1EAEDB] hover:bg-secondary/80" // Blue color
+              "rounded-full px-5 py-2 text-sm font-medium transition-all text-[#1EAEDB]",
+              activeMode === 'experience' 
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
             )}
           >
             Experience
@@ -76,9 +79,10 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="skills" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              activeMode === 'skills' ? "bg-white shadow-sm" : "",
-              "text-green-500 hover:bg-secondary/80" // Green color
+              "rounded-full px-5 py-2 text-sm font-medium transition-all text-green-500",
+              activeMode === 'skills' 
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
             )}
           >
             Skills
@@ -87,9 +91,10 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="contact" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              activeMode === 'contact' ? "bg-white shadow-sm" : "",
-              "text-yellow-500 hover:bg-secondary/80" // Yellow color
+              "rounded-full px-5 py-2 text-sm font-medium transition-all text-yellow-500",
+              activeMode === 'contact' 
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
             )}
           >
             Contact
@@ -98,9 +103,10 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="about" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              activeMode === 'about' ? "bg-white shadow-sm" : "",
-              "text-[#ea384c] hover:bg-secondary/80" // Red color
+              "rounded-full px-5 py-2 text-sm font-medium transition-all text-[#ea384c]",
+              activeMode === 'about' 
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
             )}
           >
             About
