@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
+import { Linkedin, Twitter, Github } from 'lucide-react';
 
 type Mode = 'work-play' | 'experience' | 'skills' | 'contact' | 'about';
 
@@ -71,8 +72,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
   };
 
   return (
-    <div className="flex justify-center mb-8 pt-24">
-      <div className="bg-background/80 backdrop-blur-md shadow-lg rounded-full px-2 py-2 border">
+    <div className="flex flex-col items-center mb-8 pt-24">
+      <div className="bg-background/80 backdrop-blur-md shadow-lg rounded-full px-2 py-2 border mb-4">
         <ToggleGroup type="single" value={activeMode} onValueChange={handleModeChange}>
           <ToggleGroupItem 
             value="work-play" 
@@ -139,6 +140,37 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             About
           </ToggleGroupItem>
         </ToggleGroup>
+      </div>
+      
+      {/* Social Media Icons */}
+      <div className="flex space-x-6 items-center">
+        <a 
+          href="https://www.linkedin.com/in/joshua-ighalo-23a910119/" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-2 rounded-full transition-all hover:bg-secondary/20 active:scale-95"
+          aria-label="LinkedIn"
+        >
+          <Linkedin size={24} />
+        </a>
+        <a 
+          href="https://x.com/O_igggy" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-2 rounded-full transition-all hover:bg-secondary/20 active:scale-95"
+          aria-label="Twitter"
+        >
+          <Twitter size={24} />
+        </a>
+        <a 
+          href="https://github.com/Oiggy?tab=repositories" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="p-2 rounded-full transition-all hover:bg-secondary/20 active:scale-95"
+          aria-label="GitHub"
+        >
+          <Github size={24} />
+        </a>
       </div>
     </div>
   );
