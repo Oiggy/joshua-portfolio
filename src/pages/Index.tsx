@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import FeatureCards from '@/components/FeatureCards';
+import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
@@ -46,7 +46,7 @@ const Index = () => {
       <main>
         <ModeToggle />
         <Hero />
-        <FeatureCards />
+        <Projects />
       </main>
       
       <Footer />
