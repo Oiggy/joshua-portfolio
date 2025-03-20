@@ -15,7 +15,7 @@ const Education = () => {
     camera.position.z = 2;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(500, 500); // Increase size from 300x300 to 500x500
+    renderer.setSize(650, 650); // Increase size from 500x500 to 650x650
     renderer.setClearColor(0x000000, 0);
 
     // Clear any existing canvas
@@ -162,7 +162,7 @@ const Education = () => {
 
     // Handle window resize
     const handleResize = () => {
-      const size = Math.min(globeRef.current?.clientWidth || 500, 500); // Update resize logic for larger globe
+      const size = Math.min(globeRef.current?.clientWidth || 650, 650); // Update resize logic for larger globe
       renderer.setSize(size, size);
     };
 
@@ -195,7 +195,7 @@ const Education = () => {
       <div className="flex flex-col items-center justify-center">
         <div 
           ref={globeRef} 
-          className="w-[500px] h-[500px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing"
+          className="w-[650px] h-[650px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing"
         >
           {/* Three.js canvas will be inserted here */}
         </div>
