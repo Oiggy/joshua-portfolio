@@ -14,6 +14,7 @@ import { toast } from '@/hooks/use-toast';
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
   const [isPressed, setIsPressed] = useState<number | null>(null);
+  const [dialogOpen, setDialogOpen] = useState<boolean>(false);
 
   const projects = [
     {
@@ -86,8 +87,11 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
           title: "Opening Grana Case Study",
           description: "Redirecting to external case study page...",
         });
-      } else if (projectId === 2 || projectId === 3) {
-        // For CAE and Health & Technology District, dialog popup is handled by the Dialog component
+      } else if (projectId === 2) {
+        // Open the dialog for CAE project
+        setDialogOpen(true);
+      } else if (projectId === 3) {
+        // For Health & Technology District, dialog popup is handled by the Dialog component
       }
     }, 150);
   };
@@ -114,8 +118,8 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''}`}
-            onClick={() => handleCardClick(project.id)}
+            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''} ${project.id === 2 ? 'cursor-pointer' : ''}`}
+            onClick={project.id === 2 ? () => handleCardClick(project.id) : undefined}
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 space-y-6">
@@ -143,20 +147,20 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                     View Case Study
                     <ExternalLink size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                   </button>
-                ) : (
-                  <Dialog>
-                    <DialogTrigger 
-                      className="inline-flex items-center text-sm font-medium group cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleCardClick(project.id);
-                      }}
-                    >
-                      Read More
-                      <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
-                      {project.id === 2 ? (
+                ) : project.id === 2 ? (
+                  <>
+                    <Dialog open={dialogOpen} onOpenChange={setDialogOpen}>
+                      <DialogTrigger 
+                        className="inline-flex items-center text-sm font-medium group cursor-pointer"
+                        onClick={(e) => {
+                          e.stopPropagation();
+                          setDialogOpen(true);
+                        }}
+                      >
+                        Read More
+                        <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                      </DialogTrigger>
+                      <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
                         <div className="flex flex-col items-center justify-start p-6">
                           <img 
                             src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
@@ -178,17 +182,31 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                             </div>
                           </DialogDescription>
                         </div>
-                      ) : (
-                        <div className="flex flex-col items-center justify-center p-6">
-                          <img 
-                            src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
-                            alt="Classified Information" 
-                            className="max-w-full h-auto mb-4"
-                          />
-                          <h3 className="text-xl font-bold mb-2">CLASSIFIED</h3>
-                          <p className="text-muted-foreground text-center">This information is confidential and not available for public viewing.</p>
-                        </div>
-                      )}
+                      </DialogContent>
+                    </Dialog>
+                  </>
+                ) : (
+                  <Dialog>
+                    <DialogTrigger 
+                      className="inline-flex items-center text-sm font-medium group cursor-pointer"
+                      onClick={(e) => {
+                        e.stopPropagation();
+                        handleCardClick(project.id);
+                      }}
+                    >
+                      Read More
+                      <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
+                      <div className="flex flex-col items-center justify-center p-6">
+                        <img 
+                          src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                          alt="Classified Information" 
+                          className="max-w-full h-auto mb-4"
+                        />
+                        <h3 className="text-xl font-bold mb-2">CLASSIFIED</h3>
+                        <p className="text-muted-foreground text-center">This information is confidential and not available for public viewing.</p>
+                      </div>
                     </DialogContent>
                   </Dialog>
                 )}
