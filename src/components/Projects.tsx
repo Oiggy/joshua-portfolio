@@ -110,7 +110,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                 </button>
               </div>
               <div className="md:w-1/2">
-                <div className="rounded-lg overflow-hidden bg-background h-full flex items-center justify-center">
+                <div className="rounded-lg overflow-hidden bg-muted/50 h-full flex items-center justify-center">
                   <img 
                     src={project.image} 
                     alt={project.title} 
