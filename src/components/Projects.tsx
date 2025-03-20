@@ -155,10 +155,15 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                       Read More
                       <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-md">
+                    <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
                       {project.id === 2 ? (
-                        <div className="flex flex-col items-start justify-start p-6">
-                          <DialogTitle className="text-xl font-bold mb-4">CAE TSPB737MAX FTD Desktop Application</DialogTitle>
+                        <div className="flex flex-col items-center justify-start p-6">
+                          <img 
+                            src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                            alt="Classified Information" 
+                            className="max-w-full h-auto mb-6"
+                          />
+                          <DialogTitle className="text-xl font-bold mb-4 text-center">CAE TSPB737MAX FTD Desktop Application</DialogTitle>
                           <DialogDescription className="text-muted-foreground mb-4">
                             <div className="space-y-4">
                               <p>Key improvements included refining the fuel quantity indicator's UI, which enhanced real-time data visualization, improved error handling, and boosted system responsiveness. This led to a 10× accuracy increase and a 15-second reduction in processing time per simulation run.</p>
