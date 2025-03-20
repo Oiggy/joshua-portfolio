@@ -48,28 +48,6 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
     }
   };
 
-  // Function to determine text color based on active mode
-  const getTextColor = (mode: Mode) => {
-    // If Work & Play is active, all buttons should have black text
-    if (activeMode === 'work-play') {
-      return 'text-black';
-    }
-    
-    // When a specific mode is active, only that button should have its unique color
-    if (activeMode === mode) {
-      switch (mode) {
-        case 'experience': return 'text-[#1EAEDB]';
-        case 'skills': return 'text-green-500';
-        case 'contact': return 'text-yellow-500';
-        case 'about': return 'text-[#ea384c]';
-        default: return 'text-black';
-      }
-    }
-    
-    // All inactive buttons remain black
-    return 'text-black';
-  };
-
   return (
     <div className="flex justify-center mb-8 pt-24">
       <div className="bg-background/80 backdrop-blur-md shadow-lg rounded-full px-2 py-2 border">
@@ -78,10 +56,7 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             value="work-play" 
             className={cn(
               "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              getTextColor('work-play'),
-              activeMode === 'work-play' 
-                ? "bg-white shadow-sm" 
-                : "hover:bg-secondary/80"
+              activeMode === 'work-play' ? "bg-white text-black shadow-sm" : "text-black hover:bg-secondary/80"
             )}
           >
             Work & Play
@@ -91,10 +66,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             value="experience" 
             className={cn(
               "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              getTextColor('experience'),
-              activeMode === 'experience' 
-                ? "bg-white shadow-sm" 
-                : "hover:bg-secondary/80"
+              activeMode === 'experience' ? "bg-white shadow-sm" : "",
+              "text-[#1EAEDB] hover:bg-secondary/80" // Blue color
             )}
           >
             Experience
@@ -104,10 +77,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             value="skills" 
             className={cn(
               "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              getTextColor('skills'),
-              activeMode === 'skills' 
-                ? "bg-white shadow-sm" 
-                : "hover:bg-secondary/80"
+              activeMode === 'skills' ? "bg-white shadow-sm" : "",
+              "text-green-500 hover:bg-secondary/80" // Green color
             )}
           >
             Skills
@@ -117,10 +88,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             value="contact" 
             className={cn(
               "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              getTextColor('contact'),
-              activeMode === 'contact' 
-                ? "bg-white shadow-sm" 
-                : "hover:bg-secondary/80"
+              activeMode === 'contact' ? "bg-white shadow-sm" : "",
+              "text-yellow-500 hover:bg-secondary/80" // Yellow color
             )}
           >
             Contact
@@ -130,10 +99,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             value="about" 
             className={cn(
               "rounded-full px-5 py-2 text-sm font-medium transition-all",
-              getTextColor('about'),
-              activeMode === 'about' 
-                ? "bg-white shadow-sm" 
-                : "hover:bg-secondary/80"
+              activeMode === 'about' ? "bg-white shadow-sm" : "",
+              "text-[#ea384c] hover:bg-secondary/80" // Red color
             )}
           >
             About
