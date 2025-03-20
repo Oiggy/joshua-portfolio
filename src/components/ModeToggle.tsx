@@ -55,10 +55,10 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="work-play" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              "rounded-full px-5 py-2 text-sm font-medium transition-all text-black",
               activeMode === 'work-play' 
-                ? "bg-white text-black shadow-sm" 
-                : "text-black hover:bg-secondary/80"
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
             )}
           >
             Work & Play
