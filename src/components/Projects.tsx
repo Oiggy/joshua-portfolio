@@ -1,11 +1,17 @@
 
 import React, { useState } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
-import { AspectRatio } from './ui/aspect-ratio';
+import { 
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from './ui/dialog';
+import { toast } from '@/hooks/use-toast';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
+  const [isPressed, setIsPressed] = useState<number | null>(null);
 
   const projects = [
     {
@@ -23,7 +29,7 @@ Agile methodologies such as sprint planning, backlog grooming, and daily standup
 
 To maintain long-term strategic alignment, an AI-driven feature roadmap was created, streamlining product development and improving cross-functional collaboration between UX, engineering, and business teams.`,
       image: "/lovable-uploads/e8373da9-dde5-45b3-a2b2-6b6e53afb34a.png",
-      caseStudyLink: "#"
+      caseStudyLink: "https://dour-target-90d.notion.site/Grana-Smart-Grain-Cooking-Every-Time-1a8d066db855802da47de5262c1c580e"
     },
     {
       id: 2,
@@ -63,6 +69,27 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
     }
   ];
 
+  const handleCardClick = (projectId: number) => {
+    setIsPressed(projectId);
+    
+    // Reset the pressed state after a short delay to create the press effect
+    setTimeout(() => {
+      setIsPressed(null);
+      
+      // Handle different card actions
+      if (projectId === 1) {
+        // Open the Grana case study link in a new tab
+        window.open(projects[0].caseStudyLink, '_blank');
+        toast({
+          title: "Opening Grana Case Study",
+          description: "Redirecting to external case study page...",
+        });
+      } else if (projectId === 2 || projectId === 3) {
+        // For CAE and Health & Technology District, dialog popup is handled by the Dialog component
+      }
+    }, 150);
+  };
+
   if (selectedProject !== null) {
     const project = projects.find(p => p.id === selectedProject);
     if (project) {
@@ -85,7 +112,8 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className="bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md"
+            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md cursor-pointer ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''}`}
+            onClick={() => project.id === 1 ? handleCardClick(project.id) : null}
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 space-y-6">
@@ -101,13 +129,36 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                   {project.company} • {project.year}
                 </div>
                 <p className="text-muted-foreground">{project.description}</p>
-                <button 
-                  onClick={() => setSelectedProject(project.id)}
-                  className="inline-flex items-center text-sm font-medium group"
-                >
-                  Read More
-                  <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
-                </button>
+                
+                {project.id === 1 ? (
+                  <button 
+                    className="inline-flex items-center text-sm font-medium group"
+                  >
+                    View Case Study
+                    <ExternalLink size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                  </button>
+                ) : (
+                  <Dialog>
+                    <DialogTrigger 
+                      className="inline-flex items-center text-sm font-medium group"
+                      onClick={() => handleCardClick(project.id)}
+                    >
+                      View Classified
+                      <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-md">
+                      <div className="flex flex-col items-center justify-center p-6">
+                        <img 
+                          src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                          alt="Classified Information" 
+                          className="max-w-full h-auto mb-4"
+                        />
+                        <h3 className="text-xl font-bold mb-2">CLASSIFIED</h3>
+                        <p className="text-muted-foreground text-center">This information is confidential and not available for public viewing.</p>
+                      </div>
+                    </DialogContent>
+                  </Dialog>
+                )}
               </div>
               <div className="md:w-1/2">
                 <div className="rounded-lg overflow-hidden bg-muted/50 h-full flex items-center justify-center">
