@@ -87,25 +87,18 @@ const TimelineItem = ({ experience, index, isLast }: { experience: typeof experi
       className={`relative opacity-0 transition-all duration-700 ${isEven ? 'translate-y-10' : 'translate-y-10'}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Number indicator */}
-      <div className="absolute left-1/2 -ml-4 -mt-4 z-10">
-        <div className={`flex items-center justify-center w-8 h-8 rounded-full ${experience.color} text-white font-bold`}>
-          {String(index + 1).padStart(2, '0')}
-        </div>
-      </div>
-      
-      {/* Circle with icon */}
+      {/* Circle with icon - updated color to match hero text color (#1EAEDB) */}
       <div className="absolute left-1/2 transform -translate-x-1/2 mt-16">
-        <div className={`flex items-center justify-center w-16 h-16 rounded-full ${experience.color} shadow-lg`}>
+        <div className={`flex items-center justify-center w-16 h-16 rounded-full bg-[#1EAEDB] shadow-lg`}>
           <Briefcase className="text-white" size={24} />
         </div>
       </div>
       
       {/* Content container */}
       <div className={`grid grid-cols-2 gap-8 mb-20 ${isLast ? '' : 'pb-12'}`}>
-        {/* Year - always visible on both sides */}
+        {/* Year - always visible on both sides - updated to be bigger and bolder */}
         <div className={`text-right ${isEven ? '' : 'col-start-2'}`}>
-          <div className={`inline-block px-4 py-2 rounded-lg bg-card font-semibold ${isEven ? 'mr-8' : 'ml-8'}`}>
+          <div className={`inline-block px-4 py-2 rounded-lg bg-card font-bold text-xl ${isEven ? 'mr-8' : 'ml-8'}`}>
             {experience.period}
           </div>
         </div>
@@ -174,10 +167,6 @@ const Experience = () => {
       className="py-24 px-6 md:px-12 bg-secondary/50 section-appear"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-16 text-center">
-          Professional Experience
-        </h2>
-        
         <div className="relative">
           {/* Timeline center line */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full">
