@@ -15,7 +15,7 @@ const Education = () => {
     camera.position.z = 2;
 
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setSize(300, 300);
+    renderer.setSize(500, 500); // Increase size from 300x300 to 500x500
     renderer.setClearColor(0x000000, 0);
 
     // Clear any existing canvas
@@ -162,7 +162,7 @@ const Education = () => {
 
     // Handle window resize
     const handleResize = () => {
-      const size = Math.min(globeRef.current?.clientWidth || 300, 300);
+      const size = Math.min(globeRef.current?.clientWidth || 500, 500); // Update resize logic for larger globe
       renderer.setSize(size, size);
     };
 
@@ -193,10 +193,9 @@ const Education = () => {
       className="max-w-4xl mx-auto px-6 py-16"
     >
       <div className="flex flex-col items-center justify-center">
-        <h3 className="text-xl font-semibold mb-6">Interactive Earth Globe</h3>
         <div 
           ref={globeRef} 
-          className="w-[300px] h-[300px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing"
+          className="w-[500px] h-[500px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing"
         >
           {/* Three.js canvas will be inserted here */}
         </div>
