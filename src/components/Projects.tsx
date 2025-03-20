@@ -1,9 +1,12 @@
+
 import React, { useState } from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
 import { 
   Dialog,
   DialogContent,
+  DialogTitle,
+  DialogDescription,
   DialogTrigger,
 } from './ui/dialog';
 import { toast } from '@/hooks/use-toast';
@@ -112,7 +115,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
           <div 
             key={project.id} 
             className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''}`}
-            onClick={() => project.id === 1 ? handleCardClick(project.id) : null}
+            onClick={() => handleCardClick(project.id)}
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 space-y-6">
@@ -149,19 +152,38 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                         handleCardClick(project.id);
                       }}
                     >
-                      {project.id === 2 ? "Read More" : "View Classified"}
+                      Read More
                       <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
-                      <div className="flex flex-col items-center justify-center p-6">
-                        <img 
-                          src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
-                          alt="Classified Information" 
-                          className="max-w-full h-auto mb-4"
-                        />
-                        <h3 className="text-xl font-bold mb-2">CLASSIFIED</h3>
-                        <p className="text-muted-foreground text-center">This information is confidential and not available for public viewing.</p>
-                      </div>
+                      {project.id === 2 ? (
+                        <div className="flex flex-col items-start justify-start p-6">
+                          <DialogTitle className="text-xl font-bold mb-4">CAE TSPB737MAX FTD Desktop Application</DialogTitle>
+                          <DialogDescription className="text-muted-foreground mb-4">
+                            <div className="space-y-4">
+                              <p>Key improvements included refining the fuel quantity indicator's UI, which enhanced real-time data visualization, improved error handling, and boosted system responsiveness. This led to a 10× accuracy increase and a 15-second reduction in processing time per simulation run.</p>
+                              
+                              <p>The cockpit flaps position indicator synchronization was enhanced to reduce pilot handling errors by 75%, cutting operational lag by 2 seconds. These refinements ensured seamless interoperability across connected simulation environments.</p>
+                              
+                              <p>The overhaul of cockpit data workflows improved UX accessibility and real-time telemetry tracking for aviation analytics. These enhancements made the training experience smoother and more intuitive for pilots.</p>
+                              
+                              <p>The development process included backlog refinement, sprint execution in Jira and Confluence, and agile deployment of UI enhancements. Additionally, the ATIS messaging API integration was optimized to improve real-time data transmission accuracy, delivering 500+ error-free transmissions and reducing communication latency by 20 seconds.</p>
+                              
+                              <p>Structured usability testing was conducted with flight trainees, leveraging data feedback loops to refine UX patterns, significantly improving training outcomes and boosting user adoption rates within enterprise aviation clients.</p>
+                            </div>
+                          </DialogDescription>
+                        </div>
+                      ) : (
+                        <div className="flex flex-col items-center justify-center p-6">
+                          <img 
+                            src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                            alt="Classified Information" 
+                            className="max-w-full h-auto mb-4"
+                          />
+                          <h3 className="text-xl font-bold mb-2">CLASSIFIED</h3>
+                          <p className="text-muted-foreground text-center">This information is confidential and not available for public viewing.</p>
+                        </div>
+                      )}
                     </DialogContent>
                   </Dialog>
                 )}
