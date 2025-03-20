@@ -11,7 +11,6 @@ import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
-import ModeToggle from '@/components/ModeToggle';
 
 const Index = () => {
   useEffect(() => {
@@ -48,7 +47,6 @@ const Index = () => {
       <Header />
       
       <main>
-        <ModeToggle />
         <Hero />
         <Projects />
         <Experience />
