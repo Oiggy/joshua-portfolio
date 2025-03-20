@@ -98,7 +98,7 @@ const TimelineItem = ({ experience, index, isLast }: { experience: typeof experi
       <div className={`grid grid-cols-2 gap-8 mb-20 ${isLast ? '' : 'pb-12'}`}>
         {/* Year - always visible on both sides - updated to be bigger and bolder and closer to the icon */}
         <div className={`text-right ${isEven ? '' : 'col-start-2'}`}>
-          <div className={`inline-block px-4 py-2 rounded-lg bg-card font-bold text-xl ${isEven ? 'mr-16' : 'ml-16'}`}>
+          <div className={`inline-block px-4 py-2 rounded-lg bg-card font-bold text-xl ${isEven ? 'mr-16' : 'ml-8'}`}>
             {experience.period}
           </div>
         </div>
