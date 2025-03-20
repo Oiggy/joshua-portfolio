@@ -2,10 +2,7 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
-import About from '@/components/About';
-import Experience from '@/components/Experience';
-import Skills from '@/components/Skills';
-import Contact from '@/components/Contact';
+import Projects from '@/components/Projects';
 import Footer from '@/components/Footer';
 import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
@@ -47,10 +44,7 @@ const Index = () => {
       
       <main>
         <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Contact />
+        <Projects />
       </main>
       
       <Footer />

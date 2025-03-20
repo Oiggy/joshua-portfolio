@@ -1,6 +1,5 @@
 
 import React, { useEffect, useRef } from 'react';
-import { ArrowDown } from 'lucide-react';
 
 const Hero = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -30,41 +29,31 @@ const Hero = () => {
   return (
     <section 
       ref={sectionRef}
-      className="min-h-screen flex flex-col justify-center items-center px-6 md:px-12 pt-24 opacity-0 transition-opacity duration-1000"
+      className="min-h-[70vh] flex flex-col justify-center items-center px-6 md:px-12 pt-24 opacity-0 transition-opacity duration-1000 relative"
     >
-      <div className="max-w-4xl mx-auto text-center">
-        <div className="inline-block px-3 py-1 rounded-full bg-muted text-sm font-medium animate-fade-in mb-6">
-          Product Management Professional
-        </div>
-        
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
-          Building exceptional <br /> product experiences
+      <div className="max-w-4xl mx-auto text-center z-10">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-slide-in-up">
+          hi, i'm joshua
         </h1>
         
-        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
-          Agile Product Manager specializing in user-centered design, 
-          data-driven decision making, and cross-functional team leadership.
-        </p>
-        
-        <div className="animate-slide-in-up" style={{ animationDelay: '0.6s' }}>
-          <a 
-            href="#about"
-            className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-          >
-            Explore my work
-          </a>
+        <div className="animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
+          <div className="inline-flex items-center text-lg text-muted-foreground mb-6">
+            <span className="mr-2">📍</span> Montreal, QC
+          </div>
         </div>
+        
+        <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
+          currently working as a product management professional, specializing in agile methodologies,
+          user-centered design, and data-driven decision making.
+        </p>
       </div>
-      
-      <div className="absolute bottom-10 animate-fade-in" style={{ animationDelay: '1s' }}>
-        <a 
-          href="#about"
-          className="flex flex-col items-center text-sm text-muted-foreground hover:text-foreground transition-colors"
-        >
-          <span className="mb-2">Scroll down</span>
-          <ArrowDown size={16} className="animate-bounce" />
-        </a>
-      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute top-1/4 left-1/5 w-6 h-6 bg-muted/30 rounded-md rotate-12 animate-float"></div>
+      <div className="absolute top-2/3 right-1/4 w-4 h-4 bg-muted/20 rounded-md -rotate-6 animate-float" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute bottom-1/4 left-1/3 w-5 h-5 bg-muted/25 rounded-md rotate-45 animate-float" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-1/3 right-1/5 w-3 h-3 bg-muted/15 rounded-full animate-float" style={{ animationDelay: '1.5s' }}></div>
+      <div className="absolute bottom-1/3 left-1/4 w-3 h-3 bg-muted/15 rounded-full animate-float" style={{ animationDelay: '0.5s' }}></div>
     </section>
   );
 };
