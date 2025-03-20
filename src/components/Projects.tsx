@@ -8,6 +8,7 @@ import {
   DialogTitle,
   DialogDescription,
   DialogTrigger,
+  DialogClose,
 } from './ui/dialog';
 import { toast } from '@/hooks/use-toast';
 
@@ -88,7 +89,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
           description: "Redirecting to external case study page...",
         });
       } else if (projectId === 2) {
-        // Open the dialog for CAE project
+        // Toggle the dialog for CAE project
         setDialogOpen(true);
       } else if (projectId === 3) {
         // For Health & Technology District, dialog popup is handled by the Dialog component
@@ -161,6 +162,13 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                         <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                       </DialogTrigger>
                       <DialogContent className="sm:max-w-lg max-h-[80vh] overflow-y-auto">
+                        <DialogClose 
+                          className="absolute right-4 top-4 rounded-sm opacity-70 hover:opacity-100 focus:outline-none"
+                          onClick={() => setDialogOpen(false)}
+                        >
+                          <X className="h-4 w-4" />
+                          <span className="sr-only">Close</span>
+                        </DialogClose>
                         <div className="flex flex-col items-center justify-start p-6">
                           <img 
                             src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
@@ -189,10 +197,6 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                   <Dialog>
                     <DialogTrigger 
                       className="inline-flex items-center text-sm font-medium group cursor-pointer"
-                      onClick={(e) => {
-                        e.stopPropagation();
-                        handleCardClick(project.id);
-                      }}
                     >
                       Read More
                       <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
