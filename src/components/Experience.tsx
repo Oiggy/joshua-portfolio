@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 
 const experiences = [
@@ -151,44 +152,6 @@ const Experience = () => {
               index={index} 
             />
           ))}
-        </div>
-        
-        <div className="mt-16">
-          <h3 className="text-xl font-bold mb-6 text-center">Education & Certifications</h3>
-          
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="p-6 bg-card rounded-xl border shadow-sm">
-              <h4 className="text-lg font-semibold mb-4">Education</h4>
-              <ul className="space-y-4">
-                <li>
-                  <p className="font-medium">Master of Applied Science in Engineering Science</p>
-                  <p className="text-muted-foreground">Simon Fraser University, British Columbia, Canada | 2019 – 2021</p>
-                </li>
-                <li>
-                  <p className="font-medium">Bachelor of Electrical & Electronics Engineering</p>
-                  <p className="text-muted-foreground">Federal University Oye-Ekiti, Ekiti State, Nigeria | 2013 – 2018</p>
-                </li>
-              </ul>
-            </div>
-            
-            <div className="p-6 bg-card rounded-xl border shadow-sm">
-              <h4 className="text-lg font-semibold mb-4">Certifications</h4>
-              <ul className="space-y-4">
-                <li>
-                  <p className="font-medium">Certified ScrumMaster (CSM)</p>
-                  <p className="text-muted-foreground">Scrum Alliance | Issued January 2025</p>
-                </li>
-                <li>
-                  <p className="font-medium">Atlassian Agile Project Management Professional Certificate</p>
-                  <p className="text-muted-foreground">Issued November 2024</p>
-                </li>
-                <li>
-                  <p className="font-medium">Aha! Product Management Professional Certificate</p>
-                  <p className="text-muted-foreground">Issued November 2024</p>
-                </li>
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
     </section>

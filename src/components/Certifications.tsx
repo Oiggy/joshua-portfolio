@@ -20,10 +20,10 @@ const Certifications = () => {
               <Check size={20} className="text-amber-600" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Agile Product Management</h3>
-              <p className="text-sm text-muted-foreground mb-2">Scrum Alliance, 2023</p>
+              <h3 className="text-lg font-semibold">Certified ScrumMaster (CSM)</h3>
+              <p className="text-sm text-muted-foreground mb-2">Scrum Alliance | Issued January 2025</p>
               <p className="text-muted-foreground text-sm">
-                Specialized in Agile methodologies and Scrum frameworks for effective product development.
+                Professional certification in Scrum methodologies and Agile project management.
               </p>
             </div>
           </div>
@@ -35,10 +35,10 @@ const Certifications = () => {
               <Check size={20} className="text-amber-600" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold">Product Strategy Certification</h3>
-              <p className="text-sm text-muted-foreground mb-2">Product School, 2022</p>
+              <h3 className="text-lg font-semibold">Atlassian Agile Project Management Professional Certificate</h3>
+              <p className="text-sm text-muted-foreground mb-2">Issued November 2024</p>
               <p className="text-muted-foreground text-sm">
-                Comprehensive training in product strategy, roadmapping, and go-to-market planning.
+                Comprehensive certification in Agile project management using Atlassian tools.
               </p>
             </div>
           </div>
@@ -50,25 +50,10 @@ const Certifications = () => {
               <Check size={20} className="text-amber-600" />
             </div>
             <div>
-              <h3 className="text-lg font-semibold">UX Design Fundamentals</h3>
-              <p className="text-sm text-muted-foreground mb-2">Nielsen Norman Group, 2023</p>
+              <h3 className="text-lg font-semibold">Aha! Product Management Professional Certificate</h3>
+              <p className="text-sm text-muted-foreground mb-2">Issued November 2024</p>
               <p className="text-muted-foreground text-sm">
-                Focused on user-centered design principles and usability testing for product development.
-              </p>
-            </div>
-          </div>
-        </div>
-        
-        <div className="bg-background/50 backdrop-blur-md p-6 rounded-xl border shadow-md">
-          <div className="flex items-start gap-4">
-            <div className="bg-amber-100 p-2 rounded-full">
-              <Check size={20} className="text-amber-600" />
-            </div>
-            <div>
-              <h3 className="text-lg font-semibold">Data Analytics for Product Managers</h3>
-              <p className="text-sm text-muted-foreground mb-2">DataCamp, 2022</p>
-              <p className="text-muted-foreground text-sm">
-                Skills in data-driven decision making, product metrics analysis, and A/B testing.
+                Specialized certification in product management methodologies and best practices.
               </p>
             </div>
           </div>
