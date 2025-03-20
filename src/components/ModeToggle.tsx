@@ -50,10 +50,12 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
 
   // Function to determine text color based on active mode
   const getTextColor = (mode: Mode) => {
-    // All buttons are black when work-play is active
-    if (activeMode === 'work-play') return 'text-black';
+    // If Work & Play is active, all buttons should have black text
+    if (activeMode === 'work-play') {
+      return 'text-black';
+    }
     
-    // When active, each button has its specific color
+    // When a specific mode is active, only that button should have its unique color
     if (activeMode === mode) {
       switch (mode) {
         case 'experience': return 'text-[#1EAEDB]';
@@ -64,7 +66,7 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
       }
     }
     
-    // When not active, buttons remain black
+    // All inactive buttons remain black
     return 'text-black';
   };
 
