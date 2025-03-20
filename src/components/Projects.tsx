@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowRight, ExternalLink } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
@@ -150,7 +149,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                         handleCardClick(project.id);
                       }}
                     >
-                      View Classified
+                      {project.id === 2 ? "Read More" : "View Classified"}
                       <ArrowRight size={16} className="ml-1 transition-transform duration-300 group-hover:translate-x-1" />
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-md">
@@ -185,4 +184,3 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
 };
 
 export default Projects;
-
