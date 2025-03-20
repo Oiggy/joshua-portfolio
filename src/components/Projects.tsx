@@ -23,7 +23,7 @@ const Projects = () => {
       logo: "/lovable-uploads/e0e10bdd-0b43-40d1-ad51-7f573122fd7f.png",
       title: "Grana: AI-Powered Smart Grain Cooking Feature",
       company: "CO.LAB",
-      year: "January 2025 – Present",
+      year: "2025",
       description: "Grana is an AI-driven smart grain cooking assistant designed to automate precision cooking, optimize preset recommendations, and enhance user experience using adaptive machine learning. The feature was developed as part of an AI Product Management Fellowship at Co.Lab to streamline grain cooking, eliminating guesswork and inconsistencies.",
       detailedDescription: `The development of Grana involved extensive user research with 18 Instant Pot users to understand cooking behaviors and preferences. Insights gathered were translated into precise product specifications, user flows, and wireframes, leading to a 30% increase in user satisfaction and a 12-minute reduction in design iteration cycle time.
 
@@ -40,7 +40,7 @@ To maintain long-term strategic alignment, an AI-driven feature roadmap was crea
       logo: "/lovable-uploads/bd633723-365f-4887-b16d-f91b8ed80643.png",
       title: "CAE TSPB737MAX FTD Desktop Application",
       company: "CAE",
-      year: "December 2023 – April 2024",
+      year: "2023-2024",
       description: "The CAE TSPB737MAX FTD Desktop Application is a B2B flight training simulation platform that integrates real-time data processing and cockpit interaction enhancements. The goal was to refine the User Interface (UI) and User Experience (UX) for aviation professionals, ensuring seamless usability and high training accuracy.",
       detailedDescription: `Key improvements included refining the fuel quantity indicator's UI, which enhanced real-time data visualization, improved error handling, and boosted system responsiveness. This led to a 10× accuracy increase and a 15-second reduction in processing time per simulation run.
 
@@ -59,7 +59,7 @@ Structured usability testing was conducted with flight trainees, leveraging data
       logo: "/lovable-uploads/b174aa3d-f23a-4004-a564-40e3a2a3e08c.png",
       title: "Neurocognitive Monitoring Module",
       company: "HEALTH & TECHNOLOGY DISTRICT",
-      year: "March 2021 – December 2023",
+      year: "2021-2023",
       description: "The Neurocognitive Monitoring Module is a Windows Desktop Extension designed for real-time cognitive processing assessments and automated clinical reporting. This neurohealth feature, initially developed under the Health & Technology District's Brainnet Team, has since been integrated into NeuroCatch for monitoring cognitive health in dementia and cerebral malaria.",
       detailedDescription: `The module was built to optimize neuro-assessment workflows, providing automated cognitive data visualization and decision-support automation. Through iterative UX improvements, report usability for healthcare providers increased by 40%, allowing for more intuitive clinical interpretations.
 

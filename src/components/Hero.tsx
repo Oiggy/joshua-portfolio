@@ -33,7 +33,7 @@ const Hero = () => {
     >
       <div className="max-w-4xl mx-auto text-center z-10">
         <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 animate-slide-in-up">
-          hi, i'm joshua
+          hello, i'm joshua
         </h1>
         
         <div className="animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
