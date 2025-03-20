@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { ArrowRight } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
+import { AspectRatio } from './ui/aspect-ratio';
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<number | null>(null);
@@ -21,7 +22,7 @@ A cross-functional team was led through an AI-focused hackathon, refining Produc
 Agile methodologies such as sprint planning, backlog grooming, and daily standups were implemented to drive development efficiency. AI-powered preset development was accelerated by 35%, and sprint cycle times were reduced by 0.5 days. The adoption of data-driven decision-making, A/B testing, and targeted surveys boosted feature adoption by 20%, ensuring Grana's smart presets met real user needs.
 
 To maintain long-term strategic alignment, an AI-driven feature roadmap was created, streamlining product development and improving cross-functional collaboration between UX, engineering, and business teams.`,
-      image: "/lovable-uploads/86fb03c6-49a8-4300-8ad1-f015141f6a07.png",
+      image: "/lovable-uploads/e8373da9-dde5-45b3-a2b2-6b6e53afb34a.png",
       caseStudyLink: "#"
     },
     {
@@ -57,7 +58,7 @@ The integration of real-time cognitive processing analytics helped improve diagn
 To expand accessibility, the module underwent localization efforts for international deployment, integrating automated translation frameworks. These enhancements improved usability for non-English-speaking clinicians by 45% and cut translation turnaround time by 20 minutes per report.
 
 A cloud-driven analytics framework was developed to enhance real-time data accuracy, improving system responsiveness by 30% and reducing processing latency by 10 seconds. The module was iteratively refined using agile-driven product development, leveraging Trello, SharePoint, and Miro for streamlined backlog prioritization and sprint execution, reducing feature rollout delays by 25%.`,
-      image: "/lovable-uploads/e8373da9-dde5-45b3-a2b2-6b6e53afb34a.png",
+      image: "/lovable-uploads/86fb03c6-49a8-4300-8ad1-f015141f6a07.png",
       caseStudyLink: "#"
     }
   ];
@@ -109,11 +110,11 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                 </button>
               </div>
               <div className="md:w-1/2">
-                <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-background">
+                <div className="rounded-lg overflow-hidden bg-background h-full flex items-center justify-center">
                   <img 
                     src={project.image} 
                     alt={project.title} 
-                    className="w-full h-full object-cover object-center"
+                    className="w-full h-auto object-contain max-h-[300px]"
                   />
                 </div>
               </div>
