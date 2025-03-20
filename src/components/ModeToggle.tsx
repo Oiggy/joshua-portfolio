@@ -5,7 +5,7 @@ import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
 import { cn } from "@/lib/utils";
 import { Linkedin, Twitter, Github } from 'lucide-react';
 
-type Mode = 'work-play' | 'experience' | 'skills' | 'contact' | 'about';
+type Mode = 'work-play' | 'experience' | 'skills' | 'education' | 'certifications' | 'contact' | 'about';
 
 interface ModeToggleProps {
   onModeChange?: (mode: Mode) => void;
@@ -25,6 +25,10 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
       setActiveMode('experience');
     } else if (path === '/skills') {
       setActiveMode('skills');
+    } else if (path === '/education') {
+      setActiveMode('education');
+    } else if (path === '/certifications') {
+      setActiveMode('certifications');
     } else if (path === '/contact') {
       setActiveMode('contact');
     } else if (path === '/about') {
@@ -61,6 +65,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
       switch (mode) {
         case 'experience': return 'text-[#1EAEDB]';
         case 'skills': return 'text-green-500';
+        case 'education': return 'text-purple-500';
+        case 'certifications': return 'text-amber-500';
         case 'contact': return 'text-yellow-500';
         case 'about': return 'text-[#ea384c]';
         default: return 'text-black';
@@ -112,6 +118,32 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
             )}
           >
             Skills
+          </ToggleGroupItem>
+          
+          <ToggleGroupItem 
+            value="education" 
+            className={cn(
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('education'),
+              activeMode === 'education' 
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
+            )}
+          >
+            Education
+          </ToggleGroupItem>
+          
+          <ToggleGroupItem 
+            value="certifications" 
+            className={cn(
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('certifications'),
+              activeMode === 'certifications' 
+                ? "bg-white shadow-sm" 
+                : "hover:bg-secondary/80"
+            )}
+          >
+            Certifications
           </ToggleGroupItem>
           
           <ToggleGroupItem 
