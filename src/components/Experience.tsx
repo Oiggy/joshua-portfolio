@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
-import { Briefcase } from 'lucide-react';
+import { Carrot, Brain, Plane } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 
 const experiences = [
@@ -18,7 +18,8 @@ const experiences = [
       "Spearheaded the creation of an AI-driven feature roadmap, ensuring strategic alignment between user needs, business goals, and technical feasibility, streamlining product development cycles and improving team efficiency.",
       "Optimized stakeholder collaboration by aligning UX, engineering, and business teams to refine the machine learning model, improving communication efficiency and feature iteration speed."
     ],
-    color: "bg-amber-400"
+    color: "bg-amber-400",
+    icon: Carrot
   },
   {
     title: "Software Simulation Product Specialist",
@@ -34,7 +35,8 @@ const experiences = [
       "Optimized ATIS messaging API integration, improving data processing speed and real-time message accuracy, delivering 500+ error-free transmissions and reducing communication latency by 20 seconds.",
       "Conducted structured usability testing with flight trainees, refining UX patterns based on data feedback loops, improving training outcomes and user adoption within enterprise aviation clients."
     ],
-    color: "bg-sky-400"
+    color: "bg-sky-400",
+    icon: Plane
   },
   {
     title: "Research Associate (Product Focus)",
@@ -50,7 +52,8 @@ const experiences = [
       "Collaborated with engineers to enhance cloud-driven analytics, ensuring real-time cognitive data accuracy, boosting system responsiveness by 30% and reducing processing latency by 10 seconds.",
       "Implemented agile-driven product iteration, leveraging Trello, SharePoint, and Miro for streamlined backlog prioritization and sprint execution, reducing feature rollout delays by 25%."
     ],
-    color: "bg-green-500"
+    color: "bg-green-500",
+    icon: Brain
   }
 ];
 
@@ -80,6 +83,7 @@ const TimelineItem = ({ experience, index, isLast }: { experience: typeof experi
   }, []);
   
   const isEven = index % 2 === 0;
+  const IconComponent = experience.icon;
   
   return (
     <div 
@@ -87,10 +91,10 @@ const TimelineItem = ({ experience, index, isLast }: { experience: typeof experi
       className={`relative opacity-0 transition-all duration-700 ${isEven ? 'translate-y-10' : 'translate-y-10'}`}
       style={{ transitionDelay: `${index * 150}ms` }}
     >
-      {/* Circle with icon - updated color to match hero text color (#1EAEDB) */}
+      {/* Circle with icon - updated to use the specific icon for each experience */}
       <div className="absolute left-1/2 transform -translate-x-1/2 mt-16">
         <div className={`flex items-center justify-center w-16 h-16 rounded-full bg-[#1EAEDB] shadow-lg`}>
-          <Briefcase className="text-white" size={24} />
+          <IconComponent className="text-white" size={24} />
         </div>
       </div>
       
