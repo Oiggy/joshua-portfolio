@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ArrowRight, ExternalLink, X } from 'lucide-react';
 import ProjectDetails from './ProjectDetails';
@@ -121,8 +120,8 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
         {projects.map((project) => (
           <div 
             key={project.id} 
-            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''} ${project.id === 2 || project.id === 3 ? 'cursor-pointer' : ''}`}
-            onClick={(project.id === 2 || project.id === 3) ? () => handleCardClick(project.id) : undefined}
+            className={`bg-muted/50 rounded-xl p-8 md:p-12 transition-all duration-300 hover:shadow-md ${isPressed === project.id ? 'transform scale-[0.98] shadow-inner' : ''} cursor-pointer`}
+            onClick={() => handleCardClick(project.id)}
           >
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2 space-y-6">
