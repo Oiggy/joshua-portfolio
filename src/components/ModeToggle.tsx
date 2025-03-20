@@ -55,7 +55,7 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
       return 'text-black';
     }
     
-    // If a button is active, it should have its unique color
+    // If this specific button is active, it should have its unique color
     if (mode === activeMode) {
       switch (mode) {
         case 'experience': return 'text-[#1EAEDB]';
