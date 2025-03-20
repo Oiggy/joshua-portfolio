@@ -1,5 +1,6 @@
+
 import React, { useRef, useEffect } from 'react';
-import { Phone, Mail, MapPin, Copy, Check } from 'lucide-react';
+import { Mail, Copy, Check } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const ContactItem = ({ 
@@ -98,23 +99,9 @@ const Contact = () => {
             
             <div className="space-y-6">
               <ContactItem 
-                icon={Phone} 
-                label="Phone" 
-                value="+1 672 699 7003" 
-                copyable 
-              />
-              
-              <ContactItem 
                 icon={Mail} 
                 label="Email" 
                 value="josh.workspacedev@gmail.com" 
-                copyable 
-              />
-              
-              <ContactItem 
-                icon={MapPin} 
-                label="Address" 
-                value="815 Avenue Plymouth, Mont-Royal, Quebec, Canada, H4P 0C7" 
                 copyable 
               />
             </div>
@@ -140,7 +127,7 @@ const Contact = () => {
                   </a>
                   
                   <p className="mt-4 text-sm text-muted-foreground">
-                    You can also reach me through the contact details provided.
+                    You can reach me through the email provided.
                   </p>
                 </div>
               </div>

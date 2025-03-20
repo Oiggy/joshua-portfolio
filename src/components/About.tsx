@@ -54,14 +54,7 @@ const About = () => {
               product strategy, meticulous execution, and continuous improvement.
             </p>
             
-            <div className="mt-8 grid grid-cols-2 gap-4">
-              <div>
-                <h3 className="text-lg font-semibold mb-2">Location</h3>
-                <p className="text-muted-foreground">
-                  Mont-Royal, Quebec, Canada
-                </p>
-              </div>
-              
+            <div className="mt-8 grid grid-cols-1 gap-4">
               <div>
                 <h3 className="text-lg font-semibold mb-2">Education</h3>
                 <p className="text-muted-foreground">

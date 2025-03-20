@@ -38,12 +38,12 @@ const HeroAbout = () => {
         
         <div className="animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
           <div className="inline-flex items-center text-lg text-muted-foreground mb-6">
-            <span className="mr-2">📍</span> Montreal, QC
+            <span className="mr-2">📍</span> West Coast, Canada
           </div>
         </div>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-slide-in-up" style={{ animationDelay: '0.4s' }}>
-          currently working as a product management professional, specializing in agile methodologies,
+          aspiring to work within product management, specializing in agile methodologies,
           user-centered design, and data-driven decision making.
         </p>
       </div>
