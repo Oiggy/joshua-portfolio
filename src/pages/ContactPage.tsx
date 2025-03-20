@@ -4,10 +4,10 @@ import Header from '@/components/Header';
 import HeroContact from '@/components/HeroContact';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import Loader from '@/components/Loader';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
+import PageTransition from '@/components/PageTransition';
 
 const ContactPage = () => {
   useEffect(() => {
@@ -36,21 +36,22 @@ const ContactPage = () => {
   }, []);
   
   return (
-    <div className="relative">
-      <Loader />
-      <CustomCursor />
-      <SmoothScroll />
-      
-      <Header />
-      
-      <main>
-        <ModeToggle />
-        <HeroContact />
-        <Contact />
-      </main>
-      
-      <Footer />
-    </div>
+    <PageTransition>
+      <div className="relative">
+        <CustomCursor />
+        <SmoothScroll />
+        
+        <Header />
+        
+        <main>
+          <ModeToggle />
+          <HeroContact />
+          <Contact />
+        </main>
+        
+        <Footer />
+      </div>
+    </PageTransition>
   );
 };
 
