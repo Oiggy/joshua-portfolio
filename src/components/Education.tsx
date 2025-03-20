@@ -24,33 +24,43 @@ const Education = () => {
     }
     globeRef.current.appendChild(renderer.domElement);
 
-    // Earth creation
-    const earthGeometry = new THREE.SphereGeometry(1, 32, 32);
+    // Load Earth textures
+    const textureLoader = new THREE.TextureLoader();
     
-    // Create earth texture
-    const earthTexture = new THREE.TextureLoader().load('/placeholder.svg');
+    // Earth creation with real texture
+    const earthGeometry = new THREE.SphereGeometry(1, 64, 64);
+    const earthTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_atmos_2048.jpg');
+    const earthBumpMap = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_normal_2048.jpg');
+    const earthSpecMap = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_specular_2048.jpg');
+    
     const earthMaterial = new THREE.MeshPhongMaterial({
       map: earthTexture,
+      bumpMap: earthBumpMap,
       bumpScale: 0.05,
+      specularMap: earthSpecMap,
+      specular: new THREE.Color('grey'),
+      shininess: 10
     });
     
     const earth = new THREE.Mesh(earthGeometry, earthMaterial);
     scene.add(earth);
 
     // Cloud layer
-    const cloudGeometry = new THREE.SphereGeometry(1.02, 32, 32);
+    const cloudGeometry = new THREE.SphereGeometry(1.02, 64, 64);
+    const cloudTexture = textureLoader.load('https://raw.githubusercontent.com/mrdoob/three.js/dev/examples/textures/planets/earth_clouds_1024.png');
     const cloudMaterial = new THREE.MeshPhongMaterial({
-      map: new THREE.TextureLoader().load('/placeholder.svg'),
+      map: cloudTexture,
       transparent: true,
-      opacity: 0.4,
+      opacity: 0.3
     });
     const clouds = new THREE.Mesh(cloudGeometry, cloudMaterial);
     scene.add(clouds);
 
-    // Lighting
+    // Add ambient lighting
     const ambientLight = new THREE.AmbientLight(0x555555);
     scene.add(ambientLight);
 
+    // Add directional lighting to simulate sun
     const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
     directionalLight.position.set(5, 3, 5);
     scene.add(directionalLight);
@@ -64,6 +74,10 @@ const Education = () => {
 
     const handleMouseDown = (e: MouseEvent) => {
       isDragging = true;
+      previousMousePosition = {
+        x: e.clientX,
+        y: e.clientY
+      };
     };
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -89,12 +103,50 @@ const Education = () => {
       isDragging = false;
     };
 
+    // Touch events for mobile
+    const handleTouchStart = (e: TouchEvent) => {
+      isDragging = true;
+      previousMousePosition = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY
+      };
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (!isDragging) return;
+
+      const deltaMove = {
+        x: e.touches[0].clientX - previousMousePosition.x,
+        y: e.touches[0].clientY - previousMousePosition.y
+      };
+
+      earth.rotation.y += deltaMove.x * 0.01;
+      earth.rotation.x += deltaMove.y * 0.01;
+      clouds.rotation.y += deltaMove.x * 0.01;
+      clouds.rotation.x += deltaMove.y * 0.01;
+
+      previousMousePosition = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY
+      };
+    };
+
+    const handleTouchEnd = (e: TouchEvent) => {
+      isDragging = false;
+    };
+
     // Add event listeners
-    renderer.domElement.addEventListener('mousedown', handleMouseDown);
+    const domElement = renderer.domElement;
+    domElement.addEventListener('mousedown', handleMouseDown);
     document.addEventListener('mousemove', handleMouseMove);
     document.addEventListener('mouseup', handleMouseUp);
+    
+    // Add touch events
+    domElement.addEventListener('touchstart', handleTouchStart);
+    document.addEventListener('touchmove', handleTouchMove);
+    document.addEventListener('touchend', handleTouchEnd);
 
-    // Auto rotation
+    // Auto rotation animation
     const animate = () => {
       requestAnimationFrame(animate);
       
@@ -108,11 +160,27 @@ const Education = () => {
     
     animate();
 
+    // Handle window resize
+    const handleResize = () => {
+      const size = Math.min(globeRef.current?.clientWidth || 300, 300);
+      renderer.setSize(size, size);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize();
+
     // Cleanup on unmount
     return () => {
-      renderer.domElement.removeEventListener('mousedown', handleMouseDown);
+      domElement.removeEventListener('mousedown', handleMouseDown);
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      
+      domElement.removeEventListener('touchstart', handleTouchStart);
+      document.removeEventListener('touchmove', handleTouchMove);
+      document.removeEventListener('touchend', handleTouchEnd);
+      
+      window.removeEventListener('resize', handleResize);
+      
       renderer.dispose();
     };
   }, []);
