@@ -21,7 +21,7 @@ A cross-functional team was led through an AI-focused hackathon, refining Produc
 Agile methodologies such as sprint planning, backlog grooming, and daily standups were implemented to drive development efficiency. AI-powered preset development was accelerated by 35%, and sprint cycle times were reduced by 0.5 days. The adoption of data-driven decision-making, A/B testing, and targeted surveys boosted feature adoption by 20%, ensuring Grana's smart presets met real user needs.
 
 To maintain long-term strategic alignment, an AI-driven feature roadmap was created, streamlining product development and improving cross-functional collaboration between UX, engineering, and business teams.`,
-      image: "/lovable-uploads/2b5b50f1-9f33-4e5d-a99f-109082a21bd1.png",
+      image: "/lovable-uploads/86fb03c6-49a8-4300-8ad1-f015141f6a07.png",
       caseStudyLink: "#"
     },
     {
@@ -40,7 +40,7 @@ The overhaul of cockpit data workflows improved UX accessibility and real-time t
 The development process included backlog refinement, sprint execution in Jira and Confluence, and agile deployment of UI enhancements. Additionally, the ATIS messaging API integration was optimized to improve real-time data transmission accuracy, delivering 500+ error-free transmissions and reducing communication latency by 20 seconds.
 
 Structured usability testing was conducted with flight trainees, leveraging data feedback loops to refine UX patterns, significantly improving training outcomes and boosting user adoption rates within enterprise aviation clients.`,
-      image: "/lovable-uploads/2b5b50f1-9f33-4e5d-a99f-109082a21bd1.png",
+      image: "/lovable-uploads/1b12fcee-4136-4374-9e28-55eeba16eacf.png",
       caseStudyLink: "#"
     },
     {
@@ -57,7 +57,7 @@ The integration of real-time cognitive processing analytics helped improve diagn
 To expand accessibility, the module underwent localization efforts for international deployment, integrating automated translation frameworks. These enhancements improved usability for non-English-speaking clinicians by 45% and cut translation turnaround time by 20 minutes per report.
 
 A cloud-driven analytics framework was developed to enhance real-time data accuracy, improving system responsiveness by 30% and reducing processing latency by 10 seconds. The module was iteratively refined using agile-driven product development, leveraging Trello, SharePoint, and Miro for streamlined backlog prioritization and sprint execution, reducing feature rollout delays by 25%.`,
-      image: "/lovable-uploads/2b5b50f1-9f33-4e5d-a99f-109082a21bd1.png",
+      image: "/lovable-uploads/e8373da9-dde5-45b3-a2b2-6b6e53afb34a.png",
       caseStudyLink: "#"
     }
   ];
