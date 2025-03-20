@@ -2,9 +2,11 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import * as THREE from 'three';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const Education = () => {
   const globeRef = useRef<HTMLDivElement>(null);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     if (!globeRef.current) return;
@@ -146,13 +148,14 @@ const Education = () => {
     document.addEventListener('touchmove', handleTouchMove);
     document.addEventListener('touchend', handleTouchEnd);
 
-    // Auto rotation animation
+    // Auto rotation animation - reduced rotation speed
     const animate = () => {
       requestAnimationFrame(animate);
       
       if (!isDragging) {
-        earth.rotation.y += 0.001;
-        clouds.rotation.y += 0.0012;
+        // Reduced rotation speed by 5x (from 0.001 to 0.0002)
+        earth.rotation.y += 0.0002;
+        clouds.rotation.y += 0.00025; // Slightly faster for clouds
       }
       
       renderer.render(scene, camera);
@@ -185,6 +188,8 @@ const Education = () => {
     };
   }, []);
 
+  const globeSize = isMobile ? 300 : 1000;
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -195,7 +200,7 @@ const Education = () => {
       <div className="flex flex-col items-center justify-center">
         <div 
           ref={globeRef} 
-          className="w-[1000px] h-[1000px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing"
+          className={`w-[${globeSize}px] h-[${globeSize}px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing`}
         >
           {/* Three.js canvas will be inserted here */}
         </div>
