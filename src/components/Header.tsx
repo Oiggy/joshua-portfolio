@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -27,20 +26,10 @@ const Header = () => {
       }`}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <Link 
-          to="/" 
-          className="text-lg font-medium tracking-tight hover:opacity-80 transition-opacity"
-        >
-          Joshua Ighalo
-        </Link>
+        {/* Empty div to maintain layout with justify-between */}
+        <div></div>
         
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#about" className="link-underline text-sm">About</a>
-          <a href="#experience" className="link-underline text-sm">Experience</a>
-          <a href="#skills" className="link-underline text-sm">Skills</a>
-          <a href="#contact" className="link-underline text-sm">Contact</a>
-        </nav>
-        
+        {/* Mobile menu button - keeping this for layout/future functionality */}
         <button 
           className="block md:hidden"
           onClick={toggleMobileMenu}
@@ -57,34 +46,7 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
-          <a 
-            href="#about" 
-            className="link-underline"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            About
-          </a>
-          <a 
-            href="#experience" 
-            className="link-underline"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Experience
-          </a>
-          <a 
-            href="#skills" 
-            className="link-underline"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Skills
-          </a>
-          <a 
-            href="#contact" 
-            className="link-underline"
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Contact
-          </a>
+          {/* Mobile menu content removed */}
         </div>
       </div>
     </header>
