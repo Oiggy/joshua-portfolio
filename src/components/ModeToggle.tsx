@@ -48,6 +48,26 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
     }
   };
 
+  // Function to determine text color based on active mode
+  const getTextColor = (mode: Mode) => {
+    // All buttons are black when work-play is active
+    if (activeMode === 'work-play') return 'text-black';
+    
+    // When active, each button has its specific color
+    if (activeMode === mode) {
+      switch (mode) {
+        case 'experience': return 'text-[#1EAEDB]';
+        case 'skills': return 'text-green-500';
+        case 'contact': return 'text-yellow-500';
+        case 'about': return 'text-[#ea384c]';
+        default: return 'text-black';
+      }
+    }
+    
+    // When not active, buttons remain black
+    return 'text-black';
+  };
+
   return (
     <div className="flex justify-center mb-8 pt-24">
       <div className="bg-background/80 backdrop-blur-md shadow-lg rounded-full px-2 py-2 border">
@@ -55,7 +75,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="work-play" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all text-black",
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('work-play'),
               activeMode === 'work-play' 
                 ? "bg-white shadow-sm" 
                 : "hover:bg-secondary/80"
@@ -67,7 +88,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="experience" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all text-[#1EAEDB]",
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('experience'),
               activeMode === 'experience' 
                 ? "bg-white shadow-sm" 
                 : "hover:bg-secondary/80"
@@ -79,7 +101,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="skills" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all text-green-500",
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('skills'),
               activeMode === 'skills' 
                 ? "bg-white shadow-sm" 
                 : "hover:bg-secondary/80"
@@ -91,7 +114,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="contact" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all text-yellow-500",
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('contact'),
               activeMode === 'contact' 
                 ? "bg-white shadow-sm" 
                 : "hover:bg-secondary/80"
@@ -103,7 +127,8 @@ const ModeToggle = ({ onModeChange }: ModeToggleProps) => {
           <ToggleGroupItem 
             value="about" 
             className={cn(
-              "rounded-full px-5 py-2 text-sm font-medium transition-all text-[#ea384c]",
+              "rounded-full px-5 py-2 text-sm font-medium transition-all",
+              getTextColor('about'),
               activeMode === 'about' 
                 ? "bg-white shadow-sm" 
                 : "hover:bg-secondary/80"
