@@ -34,6 +34,7 @@ export default defineConfig(({ mode }) => {
     },
     build: {
       outDir: 'dist',
+      assetsInlineLimit: 0, // Ensure assets are not inlined as base64
       rollupOptions: {
         output: {
           manualChunks: {
