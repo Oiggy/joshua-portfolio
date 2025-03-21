@@ -61,7 +61,7 @@ const testimonialImages = [
 
 const TestimonialSlider = () => {
   const autoplayPlugin = React.useRef(
-    Autoplay({ delay: 3000, stopOnInteraction: true })
+    Autoplay({ delay: 5000, stopOnInteraction: true })
   );
 
   return (
@@ -84,13 +84,14 @@ const TestimonialSlider = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonialImages.map((image) => (
-              <CarouselItem key={image.id} className="pl-2 md:pl-4 sm:basis-1/1 md:basis-1/3 lg:basis-1/3">
+              <CarouselItem key={image.id} className="pl-2 md:pl-4 sm:basis-full md:basis-1/2 lg:basis-1/1">
                 <Card className="h-full overflow-hidden border border-border hover:border-primary/20 transition-all duration-300 hover:shadow-md bg-card">
                   <CardContent className="p-4">
                     <img 
                       src={image.src} 
-                      alt={image.alt} 
-                      className="w-full h-auto rounded-md shadow-sm hover:opacity-95 transition-opacity" 
+                      alt={image.alt}
+                      className="w-full h-auto rounded-md shadow-sm hover:opacity-95 transition-opacity cursor-pointer"
+                      onClick={() => window.open(image.src, '_blank')}
                     />
                   </CardContent>
                 </Card>
