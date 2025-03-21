@@ -77,7 +77,6 @@ const TestimonialSlider = () => {
           opts={{
             align: "start",
             loop: true,
-            direction: "rtl", // Right to left motion
           }}
           className="w-full"
           onMouseEnter={() => autoplayPlugin.current.stop()}
