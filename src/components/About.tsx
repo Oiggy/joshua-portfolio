@@ -51,10 +51,7 @@ const About = () => {
         </div>
         
         <p className="text-xl md:text-2xl lg:text-3xl italic text-[#ea384c] mb-8 leading-relaxed">
-          Life is all about balance, staying curious, embracing passions, and 
-          enjoying the things that bring excitement and growth. Whether it's the 
-          thrill of competition, the latest tech innovations, or a perfectly curated 
-          living space, I love diving deep into the things that spark my interest.
+          Life is all about balance, staying curious, embracing passions, and enjoying the things that bring excitement and growth. As a proud Canadian, I've learned to appreciate both the hustle and the moments of stillness, whether it's the thrill of competition, the latest tech innovations, or a perfectly curated living space. I love diving deep into the things that spark my interest and keep me inspired.
         </p>
         
         <p className="text-lg md:text-xl text-muted-foreground mb-8">
