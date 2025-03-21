@@ -1,23 +1,17 @@
 
 import React from 'react';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
 import { Card } from "@/components/ui/card";
 import useEmblaCarousel from 'embla-carousel-react';
 import AutoPlay from 'embla-carousel-autoplay';
 
 const CertificationCards = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     { 
       align: "start",
       loop: true,
-      direction: "rtl", // Makes it move from right to left
-      dragFree: true,
+      direction: "ltr", // Using ltr direction for DOM order
+      slidesToScroll: 1,
+      containScroll: "trimSnaps"
     },
     [AutoPlay({ delay: 3000, stopOnInteraction: false })]
   );
@@ -26,7 +20,7 @@ const CertificationCards = () => {
     <section className="py-16 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
         <div className="overflow-hidden" ref={emblaRef}>
-          <div className="flex">
+          <div className="flex flex-row-reverse"> {/* Reversed flex direction to make cards move right to left */}
             {/* First certification card */}
             <div className="flex-[0_0_100%] md:flex-[0_0_80%] lg:flex-[0_0_70%] min-w-0 pl-4">
               <Card className="border-2 border-amber-500 h-[600px] md:h-[700px] bg-card hover:shadow-lg transition-all overflow-hidden">
