@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
@@ -29,7 +30,7 @@ const Header = () => {
         {/* Empty div to maintain layout with justify-between */}
         <div></div>
         
-        {/* Mobile menu button - keeping this for layout/future functionality */}
+        {/* Mobile menu button */}
         <button 
           className="block md:hidden"
           onClick={toggleMobileMenu}
@@ -46,7 +47,7 @@ const Header = () => {
         }`}
       >
         <div className="flex flex-col items-center justify-center h-full space-y-8 text-lg">
-          {/* Mobile menu content removed */}
+          {/* Mobile menu content */}
         </div>
       </div>
     </header>

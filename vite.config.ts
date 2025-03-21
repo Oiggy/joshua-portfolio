@@ -7,10 +7,11 @@ import { componentTagger } from "lovable-tagger";
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
   // Get the repository name from environment variables or fallback to a default value
-  const repoName = process.env.REPOSITORY_NAME ? process.env.REPOSITORY_NAME.split('/')[1] : '';
+  const repoName = process.env.REPOSITORY_NAME 
+    ? process.env.REPOSITORY_NAME.split('/')[1] 
+    : '';
   
-  // For GitHub Pages, we're now using HashRouter in production,
-  // so we can set base to '/' or to the repo name
+  // For GitHub Pages with HashRouter, we need the correct base path
   const basePath = mode === 'production' && repoName ? `/${repoName}/` : '/';
 
   console.log(`Building with base path: ${basePath}`);
