@@ -4,7 +4,6 @@ import PageTransition from '@/components/PageTransition';
 import Header from '@/components/Header';
 import ModeToggle from '@/components/ModeToggle';
 import HeroCertifications from '@/components/HeroCertifications';
-import Certifications from '@/components/Certifications';
 import Footer from '@/components/Footer';
 
 const CertificationsPage = () => {
@@ -14,7 +13,6 @@ const CertificationsPage = () => {
         <Header />
         <ModeToggle />
         <HeroCertifications />
-        <Certifications />
         <Footer />
       </div>
     </PageTransition>
