@@ -1,6 +1,7 @@
 
 import React, { useRef, useEffect } from 'react';
 import { cn } from '@/lib/utils';
+import { AspectRatio } from '@/components/ui/aspect-ratio';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -36,14 +37,16 @@ const About = () => {
         {/* Maple leaves image */}
         <div className="flex justify-center mb-16 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
           <div className={cn(
-            "overflow-hidden rounded-lg w-full max-w-md md:max-w-lg mx-auto bg-background",
+            "w-full max-w-md md:max-w-lg mx-auto bg-background rounded-lg",
             "transition-all duration-300 hover:shadow-lg"
           )}>
-            <img 
-              src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
-              alt="Canadian maple leaves" 
-              className="w-full h-full object-cover object-center transform scale-105"
-            />
+            <AspectRatio ratio={16 / 9}>
+              <img 
+                src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
+                alt="Canadian maple leaves" 
+                className="w-full h-full object-cover object-center"
+              />
+            </AspectRatio>
           </div>
         </div>
         
