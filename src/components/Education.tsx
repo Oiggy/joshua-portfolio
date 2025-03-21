@@ -1,6 +1,6 @@
-
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
+import { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 import { useIsMobile } from '@/hooks/use-mobile';
 
@@ -145,8 +145,8 @@ const Education = () => {
     
     // Add touch events
     domElement.addEventListener('touchstart', handleTouchStart);
-    document.addEventListener('touchmove', handleTouchMove);
-    document.addEventListener('touchend', handleTouchEnd);
+    domElement.addEventListener('touchmove', handleTouchMove);
+    domElement.addEventListener('touchend', handleTouchEnd);
 
     // Auto rotation animation - reduced rotation speed
     const animate = () => {
@@ -198,15 +198,7 @@ const Education = () => {
       className="max-w-6xl mx-auto px-6 py-16"
     >
       <div className="flex flex-col items-center justify-center">
-        <div 
-          ref={globeRef} 
-          className={`w-[${globeSize}px] h-[${globeSize}px] flex items-center justify-center mb-8 cursor-grab active:cursor-grabbing`}
-        >
-          {/* Three.js canvas will be inserted here */}
-        </div>
-        <p className="text-center text-muted-foreground mb-2">
-          Click and drag to rotate the globe
-        </p>
+        {/* Globe has been removed */}
       </div>
     </motion.div>
   );
