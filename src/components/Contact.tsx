@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { Mail, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -48,10 +49,21 @@ const BookingCard = () => {
   }, []);
 
   return (
-    <div className="grid md:grid-cols-1 gap-8 bg-card rounded-xl border border-[#ea384c] shadow-md overflow-hidden p-6 h-full">
-      <h2 className="text-3xl font-bold mb-4">Schedule a Meeting</h2>
-      <p className="text-muted-foreground mb-6">Choose a time slot that works for you.</p>
-      <div className="calendly-inline-widget" data-url="https://calendly.com/josh-workspacedev/30min" style={{minWidth: "100%", height: "480px"}}></div>
+    <div className="grid md:grid-cols-1 gap-8 bg-card rounded-xl border border-[#ea384c] shadow-md overflow-hidden p-6 h-full flex flex-col">
+      <div>
+        <h2 className="text-3xl font-bold mb-4">Schedule a Meeting</h2>
+        <p className="text-muted-foreground mb-6">Choose a time slot that works for you.</p>
+      </div>
+      <div className="flex-grow overflow-hidden">
+        <div 
+          className="calendly-inline-widget h-full w-full" 
+          data-url="https://calendly.com/josh-workspacedev/30min" 
+          style={{
+            minWidth: "100%", 
+            height: "550px"
+          }}
+        ></div>
+      </div>
     </div>
   );
 };
