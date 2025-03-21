@@ -31,7 +31,7 @@ const About = () => {
       ref={sectionRef}
       className="py-24 px-6 md:px-12 section-appear"
     >
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-6xl mx-auto text-center">
         <p className="text-xl md:text-2xl lg:text-3xl italic text-[#ea384c] mb-8 leading-relaxed">
           Life is all about balance, staying curious, embracing passions, and 
           enjoying the things that bring excitement and growth. Whether it's the 
