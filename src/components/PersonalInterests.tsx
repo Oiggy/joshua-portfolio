@@ -34,6 +34,7 @@ const PersonalInterests = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-8">
+            <h2 className="text-3xl font-bold mb-6">Life is all about balance</h2>
             <p className="text-muted-foreground mb-4">
               Life is all about balance, staying curious, embracing passions, and enjoying the things that bring excitement and growth. Whether it's the thrill of competition, the latest tech innovations, or a perfectly curated living space, I love diving deep into the things that spark my interest.
             </p>
@@ -113,40 +114,17 @@ const PersonalInterests = () => {
               />
             </div>
             <div className="grid grid-cols-2 gap-6">
-              <div className="rounded-xl overflow-hidden shadow-lg h-48">
+              <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src="/lovable-uploads/62219973-d02f-4d46-bc4d-f85575d0ea9f.png" 
                   alt="Joshua Ighalo in winter" 
                   className="w-full h-full object-cover"
                 />
               </div>
-              <div className="rounded-xl overflow-hidden shadow-lg h-48">
+              <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
                   src="/lovable-uploads/e1bcd773-214f-446d-8d1f-c80a7ef3476a.png" 
                   alt="Joshua Ighalo in glasses" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-3 gap-4">
-              <div className="rounded-xl overflow-hidden shadow-lg h-32">
-                <img 
-                  src="/lovable-uploads/49e9e853-0a3c-45a5-a996-9c4af9e3b7e7.png" 
-                  alt="Joshua Ighalo lifestyle" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg h-32">
-                <img 
-                  src="/lovable-uploads/e38f7001-0c2f-4a22-b3bb-238fc2582353.png" 
-                  alt="Joshua Ighalo activity" 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg h-32">
-                <img 
-                  src="/lovable-uploads/e4bfc44d-ce9e-4743-b560-acd280b3d0d3.png" 
-                  alt="Joshua Ighalo casual" 
                   className="w-full h-full object-cover"
                 />
               </div>
