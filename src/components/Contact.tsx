@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -151,6 +151,22 @@ const Contact = () => {
               className="h-full w-full object-cover"
             />
           </div>
+        </div>
+        
+        {/* Navigation Buttons */}
+        <div className="flex justify-center mt-8 gap-4">
+          <button 
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-muted hover:bg-muted/10 transition-colors"
+            aria-label="Previous page"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </button>
+          <button 
+            className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-muted hover:bg-muted/10 transition-colors"
+            aria-label="Next page"
+          >
+            <ArrowRight className="h-5 w-5" />
+          </button>
         </div>
       </div>
     </section>
