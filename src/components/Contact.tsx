@@ -1,6 +1,6 @@
 
 import React, { useRef, useEffect, useState } from 'react';
-import { Mail, Phone, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -138,18 +138,6 @@ const Contact = () => {
                   icon={Mail} 
                   title="Email" 
                   content="josh.workspacedev@gmail.com" 
-                />
-                
-                <ContactItem 
-                  icon={Phone} 
-                  title="Contact Number" 
-                  content="(123) 456-7890" 
-                />
-                
-                <ContactItem 
-                  icon={MapPin} 
-                  title="Location" 
-                  content="West Coast, Canada" 
                 />
               </div>
             </div>
