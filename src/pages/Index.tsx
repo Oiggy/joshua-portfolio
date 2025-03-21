@@ -8,7 +8,6 @@ import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
 import PageTransition from '@/components/PageTransition';
-import TestimonialSlider from '@/components/TestimonialSlider';
 
 const Index = () => {
   useEffect(() => {
@@ -48,7 +47,6 @@ const Index = () => {
           <ModeToggle />
           <Hero />
           <Projects />
-          <TestimonialSlider />
         </main>
         
         <Footer />
