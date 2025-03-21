@@ -24,7 +24,7 @@ const CertificationCards = () => {
             align: "center",
             loop: true,
             direction: "rtl", // Right to left movement
-            initialIndex: 0
+            startIndex: 0 // Using startIndex instead of initialIndex
           }}
           className="w-full"
           onMouseEnter={() => autoplayPlugin.current.stop()}
