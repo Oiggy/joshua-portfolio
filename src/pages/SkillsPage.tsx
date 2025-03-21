@@ -8,6 +8,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
 import PageTransition from '@/components/PageTransition';
+import PageBackground from '@/components/PageBackground';
 
 const SkillsPage = () => {
   useEffect(() => {
@@ -37,20 +38,22 @@ const SkillsPage = () => {
   
   return (
     <PageTransition>
-      <div className="relative">
-        <CustomCursor />
-        <SmoothScroll />
-        
-        <Header />
-        
-        <main>
-          <ModeToggle />
-          <HeroSkills />
-          <Skills />
-        </main>
-        
-        <Footer />
-      </div>
+      <PageBackground>
+        <div className="relative">
+          <CustomCursor />
+          <SmoothScroll />
+          
+          <Header />
+          
+          <main>
+            <ModeToggle />
+            <HeroSkills />
+            <Skills />
+          </main>
+          
+          <Footer />
+        </div>
+      </PageBackground>
     </PageTransition>
   );
 };

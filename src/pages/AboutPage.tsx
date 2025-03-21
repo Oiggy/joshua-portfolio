@@ -9,6 +9,7 @@ import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
 import ModeToggle from '@/components/ModeToggle';
 import PageTransition from '@/components/PageTransition';
+import PageBackground from '@/components/PageBackground';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -38,21 +39,23 @@ const AboutPage = () => {
   
   return (
     <PageTransition>
-      <div className="relative">
-        <CustomCursor />
-        <SmoothScroll />
-        
-        <Header />
-        
-        <main>
-          <ModeToggle />
-          <HeroAbout />
-          <About />
-          <PersonalInterests />
-        </main>
-        
-        <Footer />
-      </div>
+      <PageBackground>
+        <div className="relative">
+          <CustomCursor />
+          <SmoothScroll />
+          
+          <Header />
+          
+          <main>
+            <ModeToggle />
+            <HeroAbout />
+            <About />
+            <PersonalInterests />
+          </main>
+          
+          <Footer />
+        </div>
+      </PageBackground>
     </PageTransition>
   );
 };

@@ -6,17 +6,20 @@ import ModeToggle from '@/components/ModeToggle';
 import HeroEducation from '@/components/HeroEducation';
 import Education from '@/components/Education';
 import Footer from '@/components/Footer';
+import PageBackground from '@/components/PageBackground';
 
 const EducationPage = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <ModeToggle />
-        <HeroEducation />
-        <Education />
-        <Footer />
-      </div>
+      <PageBackground>
+        <div className="min-h-screen bg-transparent">
+          <Header />
+          <ModeToggle />
+          <HeroEducation />
+          <Education />
+          <Footer />
+        </div>
+      </PageBackground>
     </PageTransition>
   );
 };

@@ -7,18 +7,21 @@ import HeroCertifications from '@/components/HeroCertifications';
 import CertificationCards from '@/components/CertificationCards';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import Footer from '@/components/Footer';
+import PageBackground from '@/components/PageBackground';
 
 const CertificationsPage = () => {
   return (
     <PageTransition>
-      <div className="min-h-screen bg-background">
-        <Header />
-        <ModeToggle />
-        <HeroCertifications />
-        <CertificationCards />
-        <TestimonialSlider />
-        <Footer />
-      </div>
+      <PageBackground>
+        <div className="min-h-screen bg-transparent">
+          <Header />
+          <ModeToggle />
+          <HeroCertifications />
+          <CertificationCards />
+          <TestimonialSlider />
+          <Footer />
+        </div>
+      </PageBackground>
     </PageTransition>
   );
 };
