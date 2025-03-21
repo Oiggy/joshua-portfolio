@@ -34,11 +34,11 @@ const About = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Maple leaves image */}
         <div className="flex justify-center mb-16 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-md md:max-w-lg mx-auto">
+          <div className="overflow-hidden rounded-lg w-full sm:w-auto shadow-lg transition-all duration-300 hover:shadow-xl">
             <img 
               src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
               alt="Canadian maple leaves" 
-              className="w-full object-cover"
+              className="max-w-full sm:max-w-md md:max-w-lg"
             />
           </div>
         </div>
