@@ -56,11 +56,12 @@ const BookingCard = () => {
       </div>
       <div className="flex-grow overflow-hidden">
         <div 
-          className="calendly-inline-widget h-full w-full" 
+          className="calendly-inline-widget w-full" 
           data-url="https://calendly.com/josh-workspacedev/30min" 
           style={{
             minWidth: "100%", 
-            height: "550px"
+            height: "500px",
+            border: "none"
           }}
         ></div>
       </div>
