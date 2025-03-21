@@ -257,7 +257,6 @@ const Skills = () => {
       className="py-24 px-6 md:px-12 section-appear"
     >
       <div className="max-w-6xl mx-auto">
-        
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
             <SkillCategory 
@@ -266,13 +265,6 @@ const Skills = () => {
               index={index} 
             />
           ))}
-        </div>
-        
-        <div className="mt-16 text-center">
-          <p className="text-muted-foreground mb-2">Additional Qualification</p>
-          <p className="font-medium text-lg">
-            Eligibility to Travel Between the USA and Canada (Canadian Citizen)
-          </p>
         </div>
       </div>
     </section>
