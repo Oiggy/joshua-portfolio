@@ -100,7 +100,7 @@ const PersonalInterests = () => {
           <div className="grid grid-cols-1 gap-6">
             <div className="rounded-xl overflow-hidden h-96 shadow-lg">
               <img 
-                src="/lovable-uploads/36bd612f-28f0-4727-b4c4-c96d7a3a6c00.png" 
+                src="lovable-uploads/36bd612f-28f0-4727-b4c4-c96d7a3a6c00.png" 
                 alt="Joshua Ighalo" 
                 className="w-full h-full object-cover"
               />
@@ -108,14 +108,14 @@ const PersonalInterests = () => {
             <div className="grid grid-cols-2 gap-6">
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/62219973-d02f-4d46-bc4d-f85575d0ea9f.png" 
+                  src="lovable-uploads/62219973-d02f-4d46-bc4d-f85575d0ea9f.png" 
                   alt="Joshua Ighalo in winter" 
                   className="w-full h-full object-cover"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/e1bcd773-214f-446d-8d1f-c80a7ef3476a.png" 
+                  src="lovable-uploads/e1bcd773-214f-446d-8d1f-c80a7ef3476a.png" 
                   alt="Joshua Ighalo in glasses" 
                   className="w-full h-full object-cover"
                 />

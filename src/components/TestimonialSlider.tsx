@@ -14,47 +14,47 @@ import Autoplay from "embla-carousel-autoplay";
 const testimonialImages = [
   {
     id: 1,
-    src: "/lovable-uploads/49e9e853-0a3c-45a5-a996-9c4af9e3b7e7.png",
+    src: "lovable-uploads/49e9e853-0a3c-45a5-a996-9c4af9e3b7e7.png",
     alt: "Yogiraj Kachhela testimonial",
   },
   {
     id: 2,
-    src: "/lovable-uploads/cbd37ffb-2c6a-4c88-bba5-6cdee1242f01.png",
+    src: "lovable-uploads/cbd37ffb-2c6a-4c88-bba5-6cdee1242f01.png",
     alt: "Hussein Bello testimonial",
   },
   {
     id: 3,
-    src: "/lovable-uploads/6a5f77a6-b57d-4c72-a10b-99f4dc5cbd5f.png",
+    src: "lovable-uploads/6a5f77a6-b57d-4c72-a10b-99f4dc5cbd5f.png",
     alt: "Ayodele Adebisi testimonial",
   },
   {
     id: 4,
-    src: "/lovable-uploads/cc803ed4-1897-44cb-812e-46708b394f23.png",
+    src: "lovable-uploads/cc803ed4-1897-44cb-812e-46708b394f23.png",
     alt: "Shina Arogundade testimonial",
   },
   {
     id: 5,
-    src: "/lovable-uploads/a84435ba-6f07-46f5-a5c6-0ebd05aa641f.png",
+    src: "lovable-uploads/a84435ba-6f07-46f5-a5c6-0ebd05aa641f.png",
     alt: "Olisaemeka Isife testimonial",
   },
   {
     id: 6,
-    src: "/lovable-uploads/f127ee0b-aeef-4184-9c9e-0ef3bfe6d967.png",
+    src: "lovable-uploads/f127ee0b-aeef-4184-9c9e-0ef3bfe6d967.png",
     alt: "Valdimiro Cussei testimonial",
   },
   {
     id: 7,
-    src: "/lovable-uploads/8ae07f93-4ad0-4056-a0b8-5fbef4da78b3.png",
+    src: "lovable-uploads/8ae07f93-4ad0-4056-a0b8-5fbef4da78b3.png",
     alt: "Gbenga Olufeyimi testimonial",
   },
   {
     id: 8,
-    src: "/lovable-uploads/64e8c633-4dc4-412c-827d-097af3178ff7.png",
+    src: "lovable-uploads/64e8c633-4dc4-412c-827d-097af3178ff7.png",
     alt: "Idiake S U testimonial",
   },
   {
     id: 9,
-    src: "/lovable-uploads/e38f7001-0c2f-4a22-b3bb-238fc2582353.png",
+    src: "lovable-uploads/e38f7001-0c2f-4a22-b3bb-238fc2582353.png",
     alt: "Warriz Adelabu testimonial",
   },
 ];

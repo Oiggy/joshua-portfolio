@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import { Mail, Calendar } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -200,7 +199,7 @@ const Contact = () => {
                   <div className="relative hidden md:block">
                     <div className="absolute inset-0 bg-gradient-to-br from-[#ea384c]/20 to-transparent z-10"></div>
                     <img 
-                      src="lovable-uploads/e1bcd773-214f-446d-8d1f-c80a7ef3476a.png" 
+                      src="/lovable-uploads/e1bcd773-214f-446d-8d1f-c80a7ef3476a.png" 
                       alt="Joshua" 
                       className="h-full w-full object-cover"
                     />

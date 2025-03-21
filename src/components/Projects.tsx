@@ -21,7 +21,7 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      logo: "/lovable-uploads/e0e10bdd-0b43-40d1-ad51-7f573122fd7f.png",
+      logo: "lovable-uploads/e0e10bdd-0b43-40d1-ad51-7f573122fd7f.png",
       title: "Grana: AI-Powered Smart Grain Cooking Feature",
       company: "CO.LAB",
       year: "2025",
@@ -33,12 +33,12 @@ A cross-functional team was led through an AI-focused hackathon, refining Produc
 Agile methodologies such as sprint planning, backlog grooming, and daily standups were implemented to drive development efficiency. AI-powered preset development was accelerated by 35%, and sprint cycle times were reduced by 0.5 days. The adoption of data-driven decision-making, A/B testing, and targeted surveys boosted feature adoption by 20%, ensuring Grana's smart presets met real user needs.
 
 To maintain long-term strategic alignment, an AI-driven feature roadmap was created, streamlining product development and improving cross-functional collaboration between UX, engineering, and business teams.`,
-      image: "/lovable-uploads/e8373da9-dde5-45b3-a2b2-6b6e53afb34a.png",
+      image: "lovable-uploads/e8373da9-dde5-45b3-a2b2-6b6e53afb34a.png",
       caseStudyLink: "https://dour-target-90d.notion.site/Grana-Smart-Grain-Cooking-Every-Time-1a8d066db855802da47de5262c1c580e"
     },
     {
       id: 2,
-      logo: "/lovable-uploads/bd633723-365f-4887-b16d-f91b8ed80643.png",
+      logo: "lovable-uploads/bd633723-365f-4887-b16d-f91b8ed80643.png",
       title: "CAE TSPB737MAX FTD Desktop Application",
       company: "CAE",
       year: "2023-2024",
@@ -52,12 +52,12 @@ The overhaul of cockpit data workflows improved UX accessibility and real-time t
 The development process included backlog refinement, sprint execution in Jira and Confluence, and agile deployment of UI enhancements. Additionally, the ATIS messaging API integration was optimized to improve real-time data transmission accuracy, delivering 500+ error-free transmissions and reducing communication latency by 20 seconds.
 
 Structured usability testing was conducted with flight trainees, leveraging data feedback loops to refine UX patterns, significantly improving training outcomes and boosting user adoption rates within enterprise aviation clients.`,
-      image: "/lovable-uploads/1b12fcee-4136-4374-9e28-55eeba16eacf.png",
+      image: "lovable-uploads/1b12fcee-4136-4374-9e28-55eeba16eacf.png",
       caseStudyLink: "#"
     },
     {
       id: 3,
-      logo: "/lovable-uploads/b174aa3d-f23a-4004-a564-40e3a2a3e08c.png",
+      logo: "lovable-uploads/b174aa3d-f23a-4004-a564-40e3a2a3e08c.png",
       title: "Neurocognitive Monitoring Module",
       company: "HEALTH & TECHNOLOGY DISTRICT",
       year: "2021-2023",
@@ -69,7 +69,7 @@ The integration of real-time cognitive processing analytics helped improve diagn
 To expand accessibility, the module underwent localization efforts for international deployment, integrating automated translation frameworks. These enhancements improved usability for non-English-speaking clinicians by 45% and cut translation turnaround time by 20 minutes per report.
 
 A cloud-driven analytics framework was developed to enhance real-time data accuracy, improving system responsiveness by 30% and reducing processing latency by 10 seconds. The module was iteratively refined using agile-driven product development, leveraging Trello, SharePoint, and Miro for streamlined backlog prioritization and sprint execution, reducing feature rollout delays by 25%.`,
-      image: "/lovable-uploads/86fb03c6-49a8-4300-8ad1-f015141f6a07.png",
+      image: "lovable-uploads/86fb03c6-49a8-4300-8ad1-f015141f6a07.png",
       caseStudyLink: "#"
     }
   ];
@@ -176,7 +176,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                         </DialogClose>
                         <div className="flex flex-col items-center justify-start p-6">
                           <img 
-                            src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                            src="lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
                             alt="Classified Information" 
                             className="max-w-full h-auto mb-6"
                           />
@@ -224,7 +224,7 @@ A cloud-driven analytics framework was developed to enhance real-time data accur
                         </DialogClose>
                         <div className="flex flex-col items-center justify-start p-6">
                           <img 
-                            src="/lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
+                            src="lovable-uploads/f6540239-4597-48d0-921f-fdc98afdc4e2.png" 
                             alt="Classified Information" 
                             className="max-w-full h-auto mb-6"
                           />
