@@ -1,5 +1,6 @@
 
 import React, { useRef, useEffect } from 'react';
+import { cn } from '@/lib/utils';
 
 const About = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -34,11 +35,14 @@ const About = () => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Maple leaves image */}
         <div className="flex justify-center mb-16 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
-          <div className="overflow-hidden rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl w-full max-w-md md:max-w-lg mx-auto">
+          <div className={cn(
+            "overflow-hidden rounded-lg w-full max-w-md md:max-w-lg mx-auto bg-background",
+            "transition-all duration-300 hover:shadow-lg"
+          )}>
             <img 
               src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
               alt="Canadian maple leaves" 
-              className="w-full object-cover"
+              className="w-full h-full object-cover object-center transform scale-105"
             />
           </div>
         </div>
