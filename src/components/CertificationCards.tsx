@@ -47,6 +47,7 @@ const CertificationCards = () => {
           opts={{
             align: "start",
             loop: true,
+            direction: "rtl", // Right to left movement
           }}
           className="w-full"
           onMouseEnter={() => autoplayPlugin.current.stop()}
@@ -54,8 +55,8 @@ const CertificationCards = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {certificationImages.map((image) => (
-              <CarouselItem key={image.id} className="pl-2 md:pl-4 basis-full">
-                <Card className="border-2 border-amber-500 h-[600px] md:h-[700px] bg-card hover:shadow-lg transition-all overflow-hidden">
+              <CarouselItem key={image.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                <Card className="border-2 border-amber-500 h-[500px] md:h-[600px] bg-card hover:shadow-lg transition-all overflow-hidden">
                   <CardContent className="p-2 sm:p-4 h-full">
                     <div className="flex justify-center h-full">
                       <img 
