@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect } from 'react';
 
 const About = () => {
@@ -32,9 +31,7 @@ const About = () => {
       className="py-24 px-6 md:px-12 section-appear"
     >
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center text-[#ea384c]">
-          Life is all about balance
-        </h2>
+        
       </div>
     </section>
   );
