@@ -29,6 +29,9 @@ jobs:
         run: npm ci
       - name: Build
         run: npm run build
+        env:
+          # Add the repository name to the environment variables
+          REPOSITORY_NAME: ${{ github.repository }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
