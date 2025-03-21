@@ -1,7 +1,6 @@
-
 import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const FileDrawer3D = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -11,16 +10,13 @@ const FileDrawer3D = () => {
   const controlsRef = useRef<OrbitControls | null>(null);
   const drawerRef = useRef<THREE.Group | null>(null);
 
-  // Initialize the 3D scene
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Setup scene
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xf5f5f5);
     sceneRef.current = scene;
 
-    // Setup renderer
     const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setClearColor(0x000000, 0);
@@ -28,13 +24,11 @@ const FileDrawer3D = () => {
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
     rendererRef.current = renderer;
     
-    // Get container dimensions
     const width = containerRef.current.clientWidth;
     const height = containerRef.current.clientHeight;
     renderer.setSize(width, height);
     containerRef.current.appendChild(renderer.domElement);
 
-    // Setup orthographic camera for top view
     const aspectRatio = width / height;
     const viewSize = 10;
     const camera = new THREE.OrthographicCamera(
@@ -45,11 +39,9 @@ const FileDrawer3D = () => {
     camera.lookAt(new THREE.Vector3(0, 0, 0));
     cameraRef.current = camera;
 
-    // Add ambient light
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
     scene.add(ambientLight);
 
-    // Add directional light (like sunshine)
     const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(5, 10, 5);
     directionalLight.castShadow = true;
@@ -59,10 +51,8 @@ const FileDrawer3D = () => {
     directionalLight.shadow.camera.far = 50;
     scene.add(directionalLight);
 
-    // Create the file drawer
     createFileDrawer();
 
-    // Create controls
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enableZoom = false;
     controls.enablePan = false;
@@ -73,7 +63,6 @@ const FileDrawer3D = () => {
     controls.update();
     controlsRef.current = controls;
 
-    // Handle window resize
     const handleResize = () => {
       if (!containerRef.current || !cameraRef.current || !rendererRef.current) return;
       
@@ -94,7 +83,6 @@ const FileDrawer3D = () => {
 
     window.addEventListener('resize', handleResize);
 
-    // Animation loop
     const animate = () => {
       requestAnimationFrame(animate);
       
@@ -109,7 +97,6 @@ const FileDrawer3D = () => {
 
     animate();
 
-    // Cleanup function
     return () => {
       if (containerRef.current && rendererRef.current) {
         if (rendererRef.current.domElement.parentNode) {
@@ -122,19 +109,15 @@ const FileDrawer3D = () => {
     };
   }, []);
 
-  // Function to create the file drawer
   const createFileDrawer = () => {
     if (!sceneRef.current) return;
     
-    // Create a group for the drawer
     const drawerGroup = new THREE.Group();
     sceneRef.current.add(drawerGroup);
     drawerRef.current = drawerGroup;
     
-    // Get the color from the hero text (amber-500)
-    const drawerColor = 0xf59e0b; // Amber-500 color
+    const drawerColor = 0xf59e0b;
     
-    // Create the main drawer body
     const drawerWidth = 7;
     const drawerHeight = 1.5;
     const drawerDepth = 4;
@@ -151,13 +134,12 @@ const FileDrawer3D = () => {
     drawerMesh.receiveShadow = true;
     drawerGroup.add(drawerMesh);
     
-    // Create drawer handle
     const handleWidth = 4;
     const handleHeight = 0.3;
     const handleDepth = 0.3;
     const handleGeometry = new THREE.BoxGeometry(handleWidth, handleHeight, handleDepth);
     const handleMaterial = new THREE.MeshStandardMaterial({ 
-      color: 0xd1d5db, // Light gray color for handle
+      color: 0xd1d5db, 
       metalness: 0.7,
       roughness: 0.3
     });
@@ -166,7 +148,6 @@ const FileDrawer3D = () => {
     handleMesh.castShadow = true;
     drawerGroup.add(handleMesh);
     
-    // Create drawer inner part (slightly recessed)
     const innerWidth = drawerWidth - 0.3;
     const innerHeight = drawerHeight - 0.3;
     const innerDepth = drawerDepth - 0.3;
@@ -180,7 +161,6 @@ const FileDrawer3D = () => {
     innerMesh.position.set(0, drawerHeight / 2, 0);
     drawerGroup.add(innerMesh);
     
-    // Add a shadow plane under the drawer
     const shadowPlaneGeometry = new THREE.PlaneGeometry(15, 15);
     const shadowPlaneMaterial = new THREE.ShadowMaterial({ opacity: 0.2 });
     const shadowPlane = new THREE.Mesh(shadowPlaneGeometry, shadowPlaneMaterial);
@@ -189,8 +169,7 @@ const FileDrawer3D = () => {
     shadowPlane.receiveShadow = true;
     sceneRef.current.add(shadowPlane);
     
-    // Position the drawer group
-    drawerGroup.position.y = 0.05; // Slightly above the ground
+    drawerGroup.position.y = 0.05;
   };
 
   return (
