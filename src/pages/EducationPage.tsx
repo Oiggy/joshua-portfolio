@@ -4,7 +4,7 @@ import PageTransition from '@/components/PageTransition';
 import Header from '@/components/Header';
 import ModeToggle from '@/components/ModeToggle';
 import HeroEducation from '@/components/HeroEducation';
-import Education from '@/components/Education';
+import EducationContent from '@/components/EducationContent';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
 
@@ -16,7 +16,7 @@ const EducationPage = () => {
           <Header />
           <ModeToggle />
           <HeroEducation />
-          <Education />
+          <EducationContent />
           <Footer />
         </div>
       </PageBackground>
