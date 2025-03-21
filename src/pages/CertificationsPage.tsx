@@ -4,6 +4,7 @@ import PageTransition from '@/components/PageTransition';
 import Header from '@/components/Header';
 import ModeToggle from '@/components/ModeToggle';
 import HeroCertifications from '@/components/HeroCertifications';
+import CertificationCards from '@/components/CertificationCards';
 import TestimonialSlider from '@/components/TestimonialSlider';
 import Footer from '@/components/Footer';
 
@@ -14,6 +15,7 @@ const CertificationsPage = () => {
         <Header />
         <ModeToggle />
         <HeroCertifications />
+        <CertificationCards />
         <TestimonialSlider />
         <Footer />
       </div>
