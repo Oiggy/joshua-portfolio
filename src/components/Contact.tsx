@@ -54,13 +54,13 @@ const BookingCard = () => {
         <h2 className="text-3xl font-bold mb-4">Schedule a Meeting</h2>
         <p className="text-muted-foreground mb-6">Choose a time slot that works for you.</p>
       </div>
-      <div className="flex-grow overflow-hidden">
+      <div className="flex-grow" style={{ minHeight: "680px" }}>
         <div 
           className="calendly-inline-widget w-full" 
           data-url="https://calendly.com/josh-workspacedev/30min" 
           style={{
             minWidth: "100%", 
-            height: "500px",
+            height: "630px",
             border: "none"
           }}
         ></div>
