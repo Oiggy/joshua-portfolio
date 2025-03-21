@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect } from 'react';
 
 const About = () => {
@@ -31,7 +32,16 @@ const About = () => {
       className="py-24 px-6 md:px-12 section-appear"
     >
       <div className="max-w-6xl mx-auto">
+        <p className="text-xl md:text-2xl lg:text-3xl italic text-[#ea384c] mb-8 leading-relaxed">
+          Life is all about balance, staying curious, embracing passions, and 
+          enjoying the things that bring excitement and growth. Whether it's the 
+          thrill of competition, the latest tech innovations, or a perfectly curated 
+          living space, I love diving deep into the things that spark my interest.
+        </p>
         
+        <p className="text-lg md:text-xl text-muted-foreground mb-8">
+          Here's a glimpse into what keeps me engaged and entertained:
+        </p>
       </div>
     </section>
   );
