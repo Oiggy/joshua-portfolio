@@ -1,5 +1,5 @@
 
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import PageBackground from '@/components/PageBackground';
 import { Button } from "@/components/ui/button";
@@ -7,6 +7,7 @@ import { Home } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     console.error(
@@ -16,9 +17,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   const handleGoHome = () => {
-    // Get the base URL from the environment or use the default
-    const base = import.meta.env.BASE_URL || '/';
-    window.location.href = base;
+    navigate('/');
   };
 
   return (

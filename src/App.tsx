@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter } from "react-router-dom";
 import AnimatedRoutes from "./components/AnimatedRoutes";
+import SmoothScroll from "./components/SmoothScroll";
 
 // Create a new QueryClient instance
 const queryClient = new QueryClient();
@@ -20,6 +21,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter basename={getBasename()}>
+        <SmoothScroll />
         <AnimatedRoutes />
       </BrowserRouter>
     </TooltipProvider>
