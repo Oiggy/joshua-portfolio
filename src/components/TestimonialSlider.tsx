@@ -66,7 +66,7 @@ const TestimonialSlider = () => {
 
   return (
     <section className="py-16 bg-secondary/30 section-appear">
-      <div className="max-w-7xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold mb-4">Colleague Testimonials</h2>
           <p className="text-muted-foreground">Feedback from professional connections</p>
@@ -84,15 +84,17 @@ const TestimonialSlider = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonialImages.map((image) => (
-              <CarouselItem key={image.id} className="pl-2 md:pl-4 sm:basis-full md:basis-1/2 lg:basis-1/1">
+              <CarouselItem key={image.id} className="pl-2 md:pl-4 basis-full">
                 <Card className="h-full overflow-hidden border border-border hover:border-primary/20 transition-all duration-300 hover:shadow-md bg-card">
-                  <CardContent className="p-4">
-                    <img 
-                      src={image.src} 
-                      alt={image.alt}
-                      className="w-full h-auto rounded-md shadow-sm hover:opacity-95 transition-opacity cursor-pointer"
-                      onClick={() => window.open(image.src, '_blank')}
-                    />
+                  <CardContent className="p-2 sm:p-4">
+                    <div className="flex justify-center">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt}
+                        className="max-w-full max-h-[80vh] object-contain rounded-md shadow-sm hover:opacity-95 transition-opacity cursor-pointer"
+                        onClick={() => window.open(image.src, '_blank')}
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               </CarouselItem>
