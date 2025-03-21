@@ -7,6 +7,7 @@ import HeroEducation from '@/components/HeroEducation';
 import Education from '@/components/Education';
 import Footer from '@/components/Footer';
 import PageBackground from '@/components/PageBackground';
+import TestimonialSlider from '@/components/TestimonialSlider';
 
 const EducationPage = () => {
   return (
@@ -17,6 +18,7 @@ const EducationPage = () => {
           <ModeToggle />
           <HeroEducation />
           <Education />
+          <TestimonialSlider />
           <Footer />
         </div>
       </PageBackground>
