@@ -1,6 +1,5 @@
-
 import React, { useRef, useEffect, useState } from 'react';
-import { Mail, ArrowLeft, ArrowRight } from 'lucide-react';
+import { Mail, Calendar } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -218,16 +217,16 @@ const Contact = () => {
             <button 
               onClick={scrollPrev}
               className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-muted hover:bg-muted/10 transition-colors"
-              aria-label="Previous page"
+              aria-label="Email form"
             >
-              <ArrowLeft className="h-5 w-5" />
+              <Mail className="h-5 w-5" />
             </button>
             <button 
               onClick={scrollNext}
               className="flex items-center justify-center w-12 h-12 rounded-full bg-background border border-muted hover:bg-muted/10 transition-colors"
-              aria-label="Next page"
+              aria-label="Scheduling calendar"
             >
-              <ArrowRight className="h-5 w-5" />
+              <Calendar className="h-5 w-5" />
             </button>
           </div>
         </div>
