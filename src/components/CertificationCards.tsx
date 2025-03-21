@@ -23,7 +23,7 @@ const CertificationCards = () => {
           opts={{
             align: "center",
             loop: true,
-            direction: "rtl", // Right to left movement
+            // Remove direction: "rtl" and invert the order of items instead
             startIndex: 0 // Using startIndex instead of initialIndex
           }}
           className="w-full"
@@ -31,12 +31,12 @@ const CertificationCards = () => {
           onMouseLeave={() => autoplayPlugin.current.play()}
         >
           <CarouselContent className="-ml-2 md:-ml-4">
-            {/* First certification card */}
+            {/* Third certification card (placing it first for right-to-left effect) */}
             <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <Card className="border-2 border-amber-500 h-[600px] md:h-[700px] bg-card hover:shadow-lg transition-all overflow-hidden">
                 <img 
-                  src="/lovable-uploads/e4bfc44d-ce9e-4743-b560-acd280b3d0d3.png" 
-                  alt="Product Management Professional Certificate" 
+                  src="/lovable-uploads/9d06e6d2-a53a-46fe-88ea-7457f35575e9.png" 
+                  alt="Atlassian Agile Project Management Certificate" 
                   className="w-full h-full object-contain p-4"
                 />
               </Card>
@@ -53,12 +53,12 @@ const CertificationCards = () => {
               </Card>
             </CarouselItem>
             
-            {/* Third certification card */}
+            {/* First certification card (placing it last for right-to-left effect) */}
             <CarouselItem className="pl-2 md:pl-4 basis-full md:basis-4/5 lg:basis-3/4">
               <Card className="border-2 border-amber-500 h-[600px] md:h-[700px] bg-card hover:shadow-lg transition-all overflow-hidden">
                 <img 
-                  src="/lovable-uploads/9d06e6d2-a53a-46fe-88ea-7457f35575e9.png" 
-                  alt="Atlassian Agile Project Management Certificate" 
+                  src="/lovable-uploads/e4bfc44d-ce9e-4743-b560-acd280b3d0d3.png" 
+                  alt="Product Management Professional Certificate" 
                   className="w-full h-full object-contain p-4"
                 />
               </Card>
