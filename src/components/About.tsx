@@ -40,13 +40,13 @@ const About = () => {
             "w-full max-w-md md:max-w-lg mx-auto bg-background",
             "transition-all duration-300 hover:shadow-lg"
           )}>
-            <AspectRatio ratio={16 / 9} className="overflow-hidden rounded-lg">
+            <div className="p-4">
               <img 
                 src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
                 alt="Canadian maple leaves" 
-                className="w-full h-full object-cover object-center"
+                className="w-full object-contain rounded-lg"
               />
-            </AspectRatio>
+            </div>
           </div>
         </div>
         
