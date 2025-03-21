@@ -66,9 +66,11 @@ const About = () => {
           
           <div className="relative">
             <div className="aspect-square bg-muted rounded-xl overflow-hidden">
-              <div className="w-full h-full flex items-center justify-center text-muted-foreground">
-                <span className="text-9xl font-bold opacity-20">JI</span>
-              </div>
+              <img 
+                src="/lovable-uploads/969a3131-b930-4ffc-8cba-35eb5b61f572.png"
+                alt="Joshua Ighalo"
+                className="w-full h-full object-cover"
+              />
             </div>
             
             <div className="absolute -bottom-6 -right-6 bg-background p-4 rounded-lg shadow-lg border animate-fade-in">

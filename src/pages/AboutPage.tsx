@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import HeroAbout from '@/components/HeroAbout';
 import About from '@/components/About';
+import PersonalInterests from '@/components/PersonalInterests';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
@@ -47,6 +48,7 @@ const AboutPage = () => {
           <ModeToggle />
           <HeroAbout />
           <About />
+          <PersonalInterests />
         </main>
         
         <Footer />
