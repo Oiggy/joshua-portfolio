@@ -16,7 +16,7 @@ const Education = () => {
       className="max-w-6xl mx-auto px-6 py-16"
     >
       <div className="flex flex-col items-center justify-center">
-        <Card className="w-full max-w-3xl bg-white/90 backdrop-blur-sm border shadow-lg mb-8">
+        <Card className="w-full max-w-4xl bg-white/90 backdrop-blur-sm border shadow-lg mb-8">
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
