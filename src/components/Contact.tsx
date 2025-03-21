@@ -80,58 +80,32 @@ const Contact = () => {
   return (
     <section 
       ref={sectionRef}
-      className="py-24 px-6 md:px-12 bg-secondary/50 section-appear"
+      className="py-24 px-6 md:px-12 section-appear"
     >
-      <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Get in Touch
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            I'm always open to discussing new product opportunities, innovative ideas, 
-            or potential collaborations.
-          </p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="bg-card rounded-xl border p-8 shadow-sm">
-            <h3 className="text-xl font-semibold mb-6">Contact Information</h3>
-            
-            <div className="space-y-6">
-              <ContactItem 
-                icon={Mail} 
-                label="Email" 
-                value="josh.workspacedev@gmail.com" 
-                copyable 
-              />
-            </div>
+      <div className="max-w-6xl mx-auto grid place-items-center">
+        <div className="bg-card rounded-xl border p-8 shadow-sm max-w-md w-full">
+          <h3 className="text-xl font-semibold mb-6 text-center">Contact Information</h3>
+          
+          <div className="space-y-6">
+            <ContactItem 
+              icon={Mail} 
+              label="Email" 
+              value="josh.workspacedev@gmail.com" 
+              copyable 
+            />
           </div>
           
-          <div className="flex flex-col items-center justify-center">
-            <div className="w-full max-w-md">
-              <div className="relative">
-                <div className="absolute -top-4 -right-4 w-24 h-24 bg-primary/5 rounded-full" />
-                <div className="absolute -bottom-12 -left-12 w-32 h-32 bg-primary/5 rounded-full" />
-                
-                <div className="relative bg-card rounded-xl border p-8 shadow-sm text-center">
-                  <h3 className="text-xl font-semibold mb-2">Let's Connect</h3>
-                  <p className="text-muted-foreground mb-6">
-                    I'm currently open to new opportunities and would love to hear from you.
-                  </p>
-                  
-                  <a
-                    href="mailto:josh.workspacedev@gmail.com"
-                    className="inline-flex items-center justify-center w-full px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
-                  >
-                    Send Email
-                  </a>
-                  
-                  <p className="mt-4 text-sm text-muted-foreground">
-                    You can reach me through the email provided.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="mt-8 text-center">
+            <a
+              href="mailto:josh.workspacedev@gmail.com"
+              className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-primary text-primary-foreground hover:bg-primary/90 transition-colors"
+            >
+              Send Email
+            </a>
+            
+            <p className="mt-4 text-sm text-muted-foreground">
+              You can reach me through the email provided.
+            </p>
           </div>
         </div>
       </div>
