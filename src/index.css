@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
@@ -234,6 +233,40 @@
 
   .section-appear.is-visible {
     @apply opacity-100 translate-y-0;
+  }
+
+  /* Honeycomb Grid Layout */
+  .honeycomb-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .honeycomb-item {
+    width: 300px;
+    margin: 15px;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+  }
+
+  @media (min-width: 768px) {
+    .honeycomb-grid {
+      padding-bottom: 50px;
+    }
+    
+    .honeycomb-item {
+      width: calc(33.33% - 30px);
+    }
+    
+    .honeycomb-item:nth-child(3n-1) {
+      transform: translateY(25px);
+    }
+    
+    .honeycomb-item:nth-child(3n+1) {
+      transform: translateY(50px);
+    }
   }
 
   /* Custom scrollbar */

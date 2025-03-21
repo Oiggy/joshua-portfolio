@@ -1,3 +1,4 @@
+
 import React, { useRef, useEffect, useState } from 'react';
 import { 
   Dialog,
@@ -193,15 +194,17 @@ const SkillCategory = ({ category, index }: { category: typeof skillCategories[0
     <>
       <div 
         ref={categoryRef}
-        className="bg-card rounded-xl border p-6 opacity-0 translate-y-10 transition-all duration-700 cursor-pointer hover:shadow-md"
-        style={{ transitionDelay: `${index * 150}ms` }}
+        className="bg-card rounded-lg border p-6 opacity-0 translate-y-10 transition-all duration-700 cursor-pointer hover:shadow-md transform hover:-translate-y-1 hover:scale-105"
+        style={{ 
+          transitionDelay: `${index * 150}ms`,
+        }}
         onClick={() => setIsDialogOpen(true)}
       >
         <h3 className="text-xl font-semibold text-green-500 text-center">{category.title}</h3>
       </div>
       
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[80vh] overflow-auto">
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-auto backdrop-blur-xl bg-background/80 border border-background/20 shadow-lg">
           <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
             <X className="h-4 w-4" />
             <span className="sr-only">Close</span>
@@ -257,13 +260,14 @@ const Skills = () => {
       className="py-24 px-6 md:px-12 section-appear"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="honeycomb-grid">
           {skillCategories.map((category, index) => (
-            <SkillCategory 
-              key={index} 
-              category={category} 
-              index={index} 
-            />
+            <div key={index} className="honeycomb-item">
+              <SkillCategory 
+                category={category} 
+                index={index} 
+              />
+            </div>
           ))}
         </div>
       </div>
