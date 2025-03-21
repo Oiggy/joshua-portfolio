@@ -32,11 +32,11 @@ const About = () => {
       className="py-24 px-6 md:px-12 section-appear"
     >
       <div className="max-w-6xl mx-auto text-center">
-        {/* Passport image with Canada flag */}
+        {/* Maple leaves image */}
         <div className="flex justify-center mb-16 animate-slide-in-up" style={{ animationDelay: '0.3s' }}>
           <img 
-            src="/lovable-uploads/abf77643-9d19-4fe2-a671-d1cb5785af3a.png" 
-            alt="Passport with Canadian flag" 
+            src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
+            alt="Canadian maple leaves" 
             className="max-w-full sm:max-w-md md:max-w-lg rounded-lg shadow-lg transition-all duration-300 hover:shadow-xl"
           />
         </div>
