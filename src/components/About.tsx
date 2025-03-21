@@ -42,7 +42,7 @@ const About = () => {
           )}>
             <div className="p-4">
               <img 
-                src="lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
+                src="/lovable-uploads/032efd57-d151-43df-9765-f38df27f842f.png" 
                 alt="Canadian maple leaves" 
                 className="w-full object-contain rounded-lg"
               />

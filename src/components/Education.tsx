@@ -44,7 +44,7 @@ const Education = () => {
             <div className="grid grid-cols-1 gap-4">
               <div className="aspect-video overflow-hidden rounded-lg">
                 <img 
-                  src="lovable-uploads/e53ed5f3-059c-446c-9d03-27c7f3b068d1.png" 
+                  src="/lovable-uploads/e53ed5f3-059c-446c-9d03-27c7f3b068d1.png" 
                   alt="SFU Interior" 
                   className="w-full h-full object-cover"
                 />
@@ -53,14 +53,14 @@ const Education = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="aspect-video overflow-hidden rounded-lg">
                   <img 
-                    src="lovable-uploads/fd619d49-83af-42f2-8d40-aeb6cdcc8d3c.png" 
+                    src="/lovable-uploads/fd619d49-83af-42f2-8d40-aeb6cdcc8d3c.png" 
                     alt="SFU Campus Aerial View" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="aspect-video overflow-hidden rounded-lg">
                   <img 
-                    src="lovable-uploads/84b78272-a6a1-415f-a04b-bad2f0470219.png" 
+                    src="/lovable-uploads/84b78272-a6a1-415f-a04b-bad2f0470219.png" 
                     alt="SFU Logo" 
                     className="w-full h-full object-cover bg-red-700"
                   />
@@ -98,7 +98,7 @@ const Education = () => {
             <div className="grid grid-cols-1 gap-4">
               <div className="aspect-video overflow-hidden rounded-lg">
                 <img 
-                  src="lovable-uploads/5832f571-cbd5-413c-98e6-aea1e147e12a.png" 
+                  src="/lovable-uploads/5832f571-cbd5-413c-98e6-aea1e147e12a.png" 
                   alt="FUOYE Campus Main Gate" 
                   className="w-full h-full object-cover"
                 />
@@ -107,7 +107,7 @@ const Education = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div className="aspect-square overflow-hidden rounded-lg">
                   <img 
-                    src="lovable-uploads/8b0e7498-add4-4a5a-98b9-ff187c24b17d.png" 
+                    src="/lovable-uploads/8b0e7498-add4-4a5a-98b9-ff187c24b17d.png" 
                     alt="FUOYE Logo" 
                     className="w-full h-full object-contain bg-white"
                   />
