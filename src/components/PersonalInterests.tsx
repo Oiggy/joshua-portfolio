@@ -34,14 +34,6 @@ const PersonalInterests = () => {
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-8">
-            <h2 className="text-3xl font-bold mb-6">Life is all about balance</h2>
-            <p className="text-muted-foreground mb-4">
-              Life is all about balance, staying curious, embracing passions, and enjoying the things that bring excitement and growth. Whether it's the thrill of competition, the latest tech innovations, or a perfectly curated living space, I love diving deep into the things that spark my interest.
-            </p>
-            <p className="text-muted-foreground mb-6">
-              Here's a glimpse into what keeps me engaged and entertained:
-            </p>
-            
             <div className="space-y-6">
               <div>
                 <h3 className="flex items-center text-xl font-semibold mb-2">
