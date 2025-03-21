@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Carousel,
@@ -40,7 +39,7 @@ const testimonials: Testimonial[] = [
     title: "Civil Engineering | Project Engineering | Sustainability",
     company: "E.I.T, PMI-CAPM",
     imageSrc: "/lovable-uploads/da8b0baa-4b99-4b8b-afdd-efdf8a6cd991.png",
-    quote: "I have known Joshua since my first week in college, even as a young man you couldn't ignore his drive to achieve, focus and hard work. Ever since, that young man has grown smarter, become a better team player and an outstanding leader, more hardworking and goal-oriented than ever. I trust you will find this accurate once you get a chance to work with him and you might even hear his favorite saying "If I can't give it my all during my prime, then what's living?"",
+    quote: "I have known Joshua since my first week in college, even as a young man you couldn't ignore his drive to achieve, focus and hard work. Ever since, that young man has grown smarter, become a better team player and an outstanding leader, more hardworking and goal-oriented than ever. I trust you will find this accurate once you get a chance to work with him and you might even hear his favorite saying \"If I can't give it my all during my prime, then what's living?\"",
     relationship: "studied together",
     date: "December 22, 2020"
   },
