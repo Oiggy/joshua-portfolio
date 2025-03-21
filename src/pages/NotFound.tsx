@@ -17,6 +17,7 @@ const NotFound = () => {
   }, [location.pathname]);
 
   const handleGoHome = () => {
+    // Simply navigate to the home route
     navigate('/');
   };
 
