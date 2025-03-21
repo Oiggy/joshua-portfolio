@@ -2,6 +2,8 @@
 import React, { useEffect } from 'react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import Projects from '@/components/Projects';
+import TestimonialSlider from '@/components/TestimonialSlider';
 import Footer from '@/components/Footer';
 import SmoothScroll from '@/components/SmoothScroll';
 import CustomCursor from '@/components/CustomCursor';
@@ -42,10 +44,16 @@ const Index = () => {
           <CustomCursor />
           <SmoothScroll />
           
+          <Header />
+          
           <main>
             <ModeToggle />
             <Hero />
+            <Projects />
+            <TestimonialSlider />
           </main>
+          
+          <Footer />
         </div>
       </PageBackground>
     </PageTransition>
