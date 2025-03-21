@@ -1,4 +1,13 @@
-import React, { useRef, useEffect } from 'react';
+
+import React, { useRef, useEffect, useState } from 'react';
+import { 
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogClose
+} from '@/components/ui/dialog';
+import { X } from 'lucide-react';
 
 const skillCategories = [
   {
@@ -157,6 +166,7 @@ const skillCategories = [
 
 const SkillCategory = ({ category, index }: { category: typeof skillCategories[0], index: number }) => {
   const categoryRef = useRef<HTMLDivElement>(null);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -181,23 +191,39 @@ const SkillCategory = ({ category, index }: { category: typeof skillCategories[0
   }, []);
   
   return (
-    <div 
-      ref={categoryRef}
-      className="bg-card rounded-xl border p-6 opacity-0 translate-y-10 transition-all duration-700"
-      style={{ transitionDelay: `${index * 150}ms` }}
-    >
-      <h3 className="text-lg font-semibold mb-4">{category.title}</h3>
-      <div className="flex flex-wrap gap-2">
-        {category.skills.map((skill, i) => (
-          <span 
-            key={i}
-            className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-xs font-medium"
-          >
-            {skill}
-          </span>
-        ))}
+    <>
+      <div 
+        ref={categoryRef}
+        className="bg-card rounded-xl border p-6 opacity-0 translate-y-10 transition-all duration-700 cursor-pointer hover:shadow-md"
+        style={{ transitionDelay: `${index * 150}ms` }}
+        onClick={() => setIsDialogOpen(true)}
+      >
+        <h3 className="text-xl font-semibold text-green-500 text-center">{category.title}</h3>
       </div>
-    </div>
+      
+      <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+        <DialogContent className="max-w-2xl max-h-[80vh] overflow-auto">
+          <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none">
+            <X className="h-4 w-4" />
+            <span className="sr-only">Close</span>
+          </DialogClose>
+          <DialogHeader>
+            <DialogTitle className="text-2xl font-bold text-green-500 mb-4">{category.title}</DialogTitle>
+          </DialogHeader>
+          <div className="flex flex-wrap gap-3 mt-4">
+            {category.skills.map((skill, i) => (
+              <span 
+                key={i}
+                className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium animate-fade-in"
+                style={{ animationDelay: `${i * 50}ms` }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
+        </DialogContent>
+      </Dialog>
+    </>
   );
 };
 
