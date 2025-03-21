@@ -84,7 +84,7 @@ const TestimonialSlider = () => {
         >
           <CarouselContent className="-ml-2 md:-ml-4">
             {testimonialImages.map((image) => (
-              <CarouselItem key={image.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+              <CarouselItem key={image.id} className="pl-2 md:pl-4 sm:basis-1/1 md:basis-1/3 lg:basis-1/3">
                 <Card className="h-full overflow-hidden border border-border hover:border-primary/20 transition-all duration-300 hover:shadow-md bg-card">
                   <CardContent className="p-4">
                     <img 
