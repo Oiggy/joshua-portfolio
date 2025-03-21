@@ -12,6 +12,8 @@ export default defineConfig(({ mode }) => {
   // Set the base path conditionally for production (GitHub Pages) or development
   const basePath = mode === 'production' && repoName ? `/${repoName}/` : '/';
 
+  console.log(`Building with base path: ${basePath}`);
+
   return {
     base: basePath, // Dynamic base path for GitHub Pages
     server: {

@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import {
   Carousel,
   CarouselContent,
@@ -23,8 +23,7 @@ const CertificationCards = () => {
           opts={{
             align: "center",
             loop: true,
-            // Remove direction: "rtl" and invert the order of items instead
-            startIndex: 0 // Using startIndex instead of initialIndex
+            startIndex: 0
           }}
           className="w-full"
           onMouseEnter={() => autoplayPlugin.current.stop()}
