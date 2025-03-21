@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import { 
   Dialog,
@@ -258,15 +257,6 @@ const Skills = () => {
       className="py-24 px-6 md:px-12 section-appear"
     >
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">
-            Professional Skills
-          </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
-            A comprehensive overview of my technical and soft skills that I've developed 
-            and refined throughout my career in product management.
-          </p>
-        </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
