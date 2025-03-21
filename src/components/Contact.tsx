@@ -1,4 +1,3 @@
-
 import React, { useRef, useEffect, useState } from 'react';
 import { Mail, ArrowLeft, ArrowRight } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
@@ -14,7 +13,6 @@ import {
 } from '@/components/ui/carousel';
 import useEmblaCarousel from 'embla-carousel-react';
 
-// Using the existing ContactItem component
 const ContactItem = ({ 
   icon: Icon, 
   title,
@@ -37,26 +35,23 @@ const ContactItem = ({
   );
 };
 
-// Booking card component
 const BookingCard = () => {
   useEffect(() => {
-    // Load Calendly script when component mounts
     const script = document.createElement('script');
     script.src = "https://assets.calendly.com/assets/external/widget.js";
     script.async = true;
     document.body.appendChild(script);
 
     return () => {
-      // Clean up script when component unmounts
       document.body.removeChild(script);
     };
   }, []);
 
   return (
-    <div className="grid md:grid-cols-1 gap-8 bg-card rounded-xl border border-[#ea384c] shadow-md overflow-hidden p-6">
+    <div className="grid md:grid-cols-1 gap-8 bg-card rounded-xl border border-[#ea384c] shadow-md overflow-hidden p-6 h-full">
       <h2 className="text-3xl font-bold mb-4">Schedule a Meeting</h2>
       <p className="text-muted-foreground mb-6">Choose a time slot that works for you.</p>
-      <div className="calendly-inline-widget" data-url="https://calendly.com/josh-workspacedev/30min" style={{minWidth: "100%", height: "580px"}}></div>
+      <div className="calendly-inline-widget" data-url="https://calendly.com/josh-workspacedev/30min" style={{minWidth: "100%", height: "480px"}}></div>
     </div>
   );
 };
@@ -129,9 +124,8 @@ const Contact = () => {
         <div className="w-full">
           <div ref={emblaRef} className="overflow-hidden">
             <div className="flex">
-              {/* Contact Form Card */}
               <div className="min-w-0 flex-[0_0_100%]">
-                <div className="grid md:grid-cols-2 gap-8 bg-card rounded-xl border border-[#ea384c] shadow-md overflow-hidden">
+                <div className="grid md:grid-cols-2 gap-8 bg-card rounded-xl border border-[#ea384c] shadow-md overflow-hidden h-full">
                   <div className="p-8 md:p-12">
                     <h2 className="text-3xl font-bold mb-2">Let's Get In Touch!</h2>
                     <p className="text-muted-foreground mb-8">Fill in the form below and I'll get back to you soon.</p>
@@ -201,14 +195,12 @@ const Contact = () => {
                 </div>
               </div>
               
-              {/* Booking Card */}
               <div className="min-w-0 flex-[0_0_100%]">
                 <BookingCard />
               </div>
             </div>
           </div>
 
-          {/* Custom Navigation Buttons */}
           <div className="flex justify-center mt-8 gap-4">
             <button 
               onClick={scrollPrev}
