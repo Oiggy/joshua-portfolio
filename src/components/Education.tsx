@@ -20,7 +20,7 @@ const Education = () => {
           <CardHeader className="pb-2">
             <div className="flex justify-between items-start">
               <div>
-                <CardTitle className="text-2xl font-bold text-purple-500 flex items-center gap-2">
+                <CardTitle className="text-2xl font-bold text-black flex items-center gap-2">
                   <GraduationCap className="h-6 w-6" />
                   Master of Applied Science in Engineering Science (2021)
                 </CardTitle>
